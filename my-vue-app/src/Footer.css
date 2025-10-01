@@ -1,0 +1,38 @@
+footer {
+    text-align: center;
+    background-color: #ffffff96;
+    width: 100vw;
+    height: auto;
+    padding: 12px;
+    border-top: 2px solid #c9c9c97e;
+}
+
+footer strong {
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+    position: relative;
+}
+
+footer strong:hover {
+    color: #008bf8;
+}
+
+footer strong::after {
+    content: "";
+    position: absolute;
+    width: 70%;
+    height: 3px;
+    left: 0;
+    border-radius: 10px;
+    bottom: -2px;
+    background-color: #008bf8;
+    transform: scaleX(0);
+    transition: transform 0.4s ease-in-out;
+    transform-origin: right;
+}
+
+footer strong:hover::after {
+    transform: scaleX(1);
+    transition: transform 0.4s ease-in-out;
+    transform-origin: left;
+}

@@ -1,0 +1,148 @@
+
+.blur-glow.fade-in-up {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) !important;
+  width: 400px;
+  height: 400px;
+  background: rgba(0, 123, 255, 0.15);
+  filter: blur(200px);
+  border-radius: 50%;
+  z-index: 0;
+  pointer-events: none; 
+}
+
+.whatsapp-float{
+    margin-bottom: 5px;
+}
+
+.landing-container {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    background-color: #e5e5e5;
+
+    background-image:
+        linear-gradient(rgba(17, 17, 17, 0.02) 1px, transparent 1px),
+        linear-gradient(to right, rgba(17, 17, 17, 0.02) 1px, transparent 1px);
+
+    background-size: 40px 40px;
+    background-repeat: repeat;
+    background-position: top left;
+    z-index: 999;
+}
+
+.apresentacao{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100vw;
+    height: 100vh;
+    z-index: 998;
+    flex-direction: column;
+}
+
+.card-container {
+    display: flex;
+    margin: 20px;
+    gap: 20px;
+}
+
+.card.highlight:hover i {
+  color: #28a745;
+}
+
+h1{
+    font-size: 36px;
+
+}
+
+h1 span, h2 span{
+    text-decoration: underline;
+    color: #008bf8;
+
+}
+
+.dot{
+    color: inherit;
+    text-decoration: none;
+}
+
+h1, h2{
+    text-align: center;
+
+}
+
+h2{
+    font-weight: 500;
+    font-size: 20px;
+
+}
+
+@keyframes fadeInUpBlur {
+  0% {
+    opacity: 0;
+    transform: translateY(30px);
+    
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+
+  }
+}
+
+.fade-in-up {
+  opacity: 0;
+  animation: fadeInUpBlur 1s ease-out forwards;
+}
+
+
+@media screen and (max-width:700px) {
+
+    .logo {
+        position: absolute;
+        left: 5px;
+        top: -13px;
+        scale: 0.9;
+    }
+
+
+    .card-container{
+        display: flex;
+        flex-direction: column;
+        margin-bottom: 50px;
+        gap: 30px;
+        margin-top: 100px;
+    }
+
+    .apresentacao{
+        height: 100dvh;
+        z-index: 0;
+    }
+
+    .apresentacao h1 {
+        font-size: 32px;
+        margin: 20px;
+        margin-bottom: 40px;
+        z-index: 0;
+    }
+
+    .apresentacao h2{
+        font-size: 18px;
+        margin: 0px 20px 0 20px;
+        z-index: 0;
+    }
+
+    .card-container{
+        scale: 0.7;
+        flex-direction: row;
+        gap: 15px;
+        margin: 0;
+        z-index: 0;
+    }
+    
+   
+}
