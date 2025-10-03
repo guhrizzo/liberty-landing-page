@@ -130,8 +130,9 @@ function Quitacao() {
 
 
             </div>
-            <h1>Veja o depoimento dos nossos clientes!</h1>
+            
             <div className='video-container'>
+                <h1>Veja o depoimento dos nossos clientes!</h1>
                 <Shorts />
             </div>
 
