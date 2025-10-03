@@ -9,6 +9,7 @@ import Carousel from './Carousel'
 import { useEffect } from "react";
 import AOS from "aos";
 import "aos/dist/aos.css";
+import Shorts from './Shorts'
 
 function Quitacao() {
 
@@ -129,10 +130,12 @@ function Quitacao() {
 
 
             </div>
-
-            <div className='lorem'>
-
+            <h1>Veja o depoimento dos nossos clientes!</h1>
+            <div className='video-container'>
+                <Shorts />
             </div>
+
+
             <Footer />
         </div>
     )
