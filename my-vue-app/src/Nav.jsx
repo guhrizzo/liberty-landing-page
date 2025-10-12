@@ -1,4 +1,4 @@
-import Logo from './assets/logo-liberty-car-white.png'
+import Logo from './assets/LOGO-VETORIZADA.png'
 import Switch from "./Switch"
 import './Nav.css'
 import { useState } from 'react'
