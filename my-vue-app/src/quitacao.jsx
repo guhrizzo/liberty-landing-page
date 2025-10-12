@@ -146,8 +146,7 @@ function Quitacao() {
     
                 <FAQ />
             </div>
-
-            <Footer />
+            <Footer /> 
         </div>
     )
 }

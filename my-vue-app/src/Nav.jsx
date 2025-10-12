@@ -42,7 +42,7 @@ function Nav() {
                     </ul>
                 </div>
                 <div className="switch">
-                    <Switch />
+                    
                 </div>
                 <div className={menuAtivo ? "lines ativo" : "lines"} onClick={alternarMenu}>
                     <div className="line"></div>
