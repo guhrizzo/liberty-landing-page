@@ -3,7 +3,7 @@
   margin: 0;
   padding: 0;
   scale: 0.97;
-  position: relative;
+
 }
 
 .swiper-slide-active .slide {
@@ -67,7 +67,7 @@
 
 @media screen and (max-width: 768px){
   .slide{
-    width: 220px;
+    width: 235px;
     height: 400px;
     display: flex;
     
@@ -80,10 +80,22 @@
 
   .slide i{
     text-align: center;
+
+  }
+
+  .carousel-wrapper{
+    height: 45dvh;
     
+  }
+
+  .swiper-wrapper{
+    height: 47dvh;
   }
 
   .slide p{
     font-size: 14px;
+  }
+  .swiper-pagination.swiper-pagination-clickable.swiper-pagination-bullets.swiper-pagination-horizontal{
+    scale: 1.2;
   }
 }

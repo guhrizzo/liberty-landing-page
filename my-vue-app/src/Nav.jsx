@@ -26,9 +26,7 @@ function Nav() {
 
                 <div className={menuAtivo ? "navbar ativo" : "navbar"}>
                     <ul>
-                        <div className="emoji">
-                            <Switch />
-                        </div>
+                        
                         <a href="/" target="_blank" rel="noopener noreferrer">
                             <li className={currentPath === "/" ? "active" : ""}>Home</li>
                         </a>

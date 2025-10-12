@@ -10,6 +10,7 @@ import { useEffect } from "react";
 import AOS from "aos";
 import "aos/dist/aos.css";
 import Shorts from './Shorts'
+import FAQ from './FAQ'
 
 function Quitacao() {
 
@@ -114,9 +115,10 @@ function Quitacao() {
                 <div className="cards">
                     {[
                         { icon: "bi-credit-card", text: "✔ Compramos seu carro mesmo com parcelas em atraso <br />Sem julgamentos. Avaliamos a situação real e fazemos uma proposta clara." },
-                        { icon: "bi-cash-coin", text: "✔ Você recebe um valor justo e se livra da dívida A Liberty Car assume a dívida, quita junto ao banco, e você recebe o valor da venda — sem precisar lidar com leilão, advogado ou apreensão." },
+                        { icon: "bi-cash-coin", text: "✔ Você recebe um valor justo e se livra da dívida A Liberty Car assume a dívida, e você recebe o valor da venda — sem precisar lidar com leilão, advogado ou apreensão." },
+                        { icon: "bi-person-check", text: "✔ Um investidor confiável entra no processo, assume a quitação desse veiculo em até 24 meses, garantindo que seu carro seja quitado sem que você precise desembolsar nada" },
                         { icon: "bi-patch-check", text: "✔ Tudo feito com segurança e transparência Trabalhamos com contratos oficiais, registros públicos e você acompanha cada etapa." },
-                        { icon: "bi-person-check", text: "✔ Você resolve o problema hoje, e com dignidade Nada de acordos complicados, dívidas intermináveis ou processos arrastados. Você vende e vira a página." },
+                        ,
                     ].map((card, index) => (
                         <div className="card-quit" key={index} data-aos="fade-up" data-aos-delay={index * 150}>
                             <i className={`bi ${card.icon}`}></i>
@@ -127,15 +129,23 @@ function Quitacao() {
                 </div>
 
                 <button className='btn-sell'><a href="https://wa.me/5514998420710?text=Ol%C3%A1%2C%20tenho%20interesse%20em%20vender%20meu%20ve%C3%ADculo" target='_blank' rel="noopener noreferrer">Quero Vender Meu Veículo</a> </button>
-
-
             </div>
-            
+
             <div className='video-container'>
                 <h1>Veja o depoimento dos nossos clientes!</h1>
                 <Shorts />
+                <div className='button-div'>
+                    <button className='btn-lm'><a href="https://wa.me/5514998420710?text=Ol%C3%A1%2C%20tenho%20interesse%20em%20vender%20meu%20ve%C3%ADculo" target='_blank' rel="noopener noreferrer">Quero conhecer mais!</a> </button>
+                </div>
             </div>
-
+            <div
+                className='bg-faq'
+                data-aos="fade-up"
+                data-aos-delay="200" 
+            >
+    
+                <FAQ />
+            </div>
 
             <Footer />
         </div>

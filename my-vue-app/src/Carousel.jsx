@@ -51,14 +51,18 @@ export default function Carousel() {
         spaceBetween={20}
         loop={true}
         centeredSlides={true}
-        pagination={{ clickable: true }}
+        pagination={{ clickable: true, type:"bullets", }}
         modules={[Pagination, Navigation, EffectCreative]}
         breakpoints={{
           0: {
             slidesPerView: 2, // padrão em telas menores
+            spaceBetween: 65,
+            centeredSlides: false,
           },
           768: {
             slidesPerView: 3, // a partir de 768px (tablet/desktop)
+            spaceBetween: 20,
+            centeredSlides: true
           },
         }}
       >

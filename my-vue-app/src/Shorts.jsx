@@ -6,6 +6,7 @@ const Shorts = () => {
     "https://www.youtube.com/embed/l52Ymt8PiA8",
     "https://www.youtube.com/embed/t8oDojIIO2A",
     "https://www.youtube.com/embed/e1iWuSdreh4",
+    "https://www.youtube.com/embed/X94GXeI4euw?si=j-zqKSSZY5qItMo3",
   ];
 
   return (
@@ -46,7 +47,8 @@ const Shorts = () => {
           </div>
         )
       })}
-       <button className='btn-lm'><a href="https://wa.me/5514998420710?text=Ol%C3%A1%2C%20tenho%20interesse%20em%20vender%20meu%20ve%C3%ADculo" target='_blank' rel="noopener noreferrer">Quero conhecer mais!</a> </button>
+      
+       
     </div>
   );
 };
