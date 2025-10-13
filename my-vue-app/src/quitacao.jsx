@@ -11,6 +11,7 @@ import AOS from "aos";
 import "aos/dist/aos.css";
 import Shorts from './Shorts'
 import FAQ from './FAQ'
+import TestimonialsSection from './testimonials'
 
 function Quitacao() {
 
@@ -133,6 +134,7 @@ function Quitacao() {
 
             <div className='video-container'>
                 <h1>Veja o depoimento dos nossos clientes!</h1>
+                <TestimonialsSection />
                 <Shorts />
                 <div className='button-div'>
                     <button className='btn-lm'><a href="https://wa.me/5514998420710?text=Ol%C3%A1%2C%20tenho%20interesse%20em%20vender%20meu%20ve%C3%ADculo" target='_blank' rel="noopener noreferrer">Quero conhecer mais!</a> </button>

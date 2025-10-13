@@ -122,6 +122,10 @@
     font-size: 20px;
 }
 
+.video-container h1{
+    margin-top: 10px;
+}
+
 .btn-msg:hover {
     border: 2px solid #008bf8;
 }
