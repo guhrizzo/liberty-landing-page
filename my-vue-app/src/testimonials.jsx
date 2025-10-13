@@ -48,7 +48,6 @@ export default function TestimonialsSection() {
   return (
     <section className="testimonials-section">
       <div className="testimonials-header">
-        <h2 data-aos="fade-up">O que nossos clientes dizem</h2>
       </div>
 
       <div className="testimonials-grid">

@@ -272,6 +272,10 @@
         font-size: 15px;
     }
 
+    .video-container h1{
+        margin-top: 10px;
+    }
+
     .bg-faq{
         clip-path: none;
         height: auto;
