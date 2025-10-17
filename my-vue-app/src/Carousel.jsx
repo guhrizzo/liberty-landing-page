@@ -56,7 +56,7 @@ export default function Carousel() {
         breakpoints={{
           0: {
             slidesPerView: 2, // padrão em telas menores
-            spaceBetween: 65,
+            spaceBetween: 60,
             centeredSlides: false,
           },
           768: {

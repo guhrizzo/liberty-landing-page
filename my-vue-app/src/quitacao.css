@@ -1,3 +1,7 @@
+body{
+    overflow-x: hidden;
+}
+
 .Quit-container {
     width: 100vw;
     min-height: 100vh;
@@ -12,6 +16,7 @@
 
     background-size: 40px 40px;
     background-repeat: repeat;
+    overflow-x: hidden ;
     background-position: top left;
     z-index: 1;
 }
@@ -274,6 +279,13 @@
 
     .video-container h1{
         margin-top: 10px;
+        font-size: 19px;
+    }
+
+
+
+    .button-div {
+        margin-top: -90px;
     }
 
     .bg-faq{

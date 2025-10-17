@@ -99,7 +99,11 @@
 @media (max-width: 600px) {
 
     .testimonials-section {
-        scale: 0.97;
+        scale: 0.85;
+        margin-top: -70px;
+        display: flex;
+        overflow: hidden;
+
     }
 
     .testimonials-header {
@@ -113,4 +117,6 @@
     .cta-button {
         width: 100%;
     }
+
+    
 }

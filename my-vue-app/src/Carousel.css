@@ -90,6 +90,7 @@
 
   .swiper-wrapper{
     height: 47dvh;
+    scale: 0.9;
   }
 
   .slide p{
