@@ -48,24 +48,29 @@ export default function Carousel() {
   return (
     <div className="carousel-wrapper">
       <Swiper
-        spaceBetween={20}
         loop={true}
         centeredSlides={true}
-        pagination={{ clickable: true, type:"bullets", }}
+        pagination={{ clickable: true, type: "bullets" }}
         modules={[Pagination, Navigation, EffectCreative]}
         breakpoints={{
           0: {
-            slidesPerView: 2, // padrão em telas menores
-            spaceBetween: 60,
+            slidesPerView: 2,
+            spaceBetween: 130,
             centeredSlides: false,
           },
           768: {
-            slidesPerView: 3, // a partir de 768px (tablet/desktop)
-            spaceBetween: 20,
-            centeredSlides: true
+            slidesPerView: 3,
+            spaceBetween: 60, // entre 768 e 799
+            centeredSlides: true,
+          },
+          800: {
+            slidesPerView: 3,
+            spaceBetween: 130, // a partir de 800
+            centeredSlides: true,
           },
         }}
       >
+
         {slides.map((slide, index) => (
           <SwiperSlide key={index}>
             <div

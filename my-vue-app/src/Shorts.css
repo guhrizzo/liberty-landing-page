@@ -76,8 +76,25 @@
     scale: 1.1;
   }
 
-  .swiper.swiper-initialized.swiper-horizontalswiper-ios.swiper-backface-hidden.shorts-swiper{
+  .swiper.swiper-initialized.swiper-horizontalswiper-ios.swiper-backface-hidden.shorts-swiper {
     overflow-x: hidden;
     opacity: 0;
+  }
+}
+
+
+@media (max-width: 800px) {
+  .video-front {
+    scale: 0.88;
+    width: 460px;
+  }
+
+  .video-bg {
+    scale: 1.15;
+  }
+
+  .swiper-button-next::after,.swiper-button-prev{
+    scale: 0.65;
+
   }
 }

@@ -100,3 +100,17 @@
     scale: 1.2;
   }
 }
+
+@media screen and (max-width: 800px){
+  .slide{
+    width: 250px;
+  }
+
+  .swiper-wrapper{
+    height: 50dvh;
+  }
+
+  .carousel-wrapper{
+    height: 47dvh;
+  }
+}

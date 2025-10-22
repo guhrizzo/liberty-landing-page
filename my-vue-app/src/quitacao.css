@@ -293,3 +293,9 @@ body{
         height: auto;
     }
 }
+
+@media (max-width:800px){
+    .video-container h1{
+        font-size: 17px;
+    }
+}
