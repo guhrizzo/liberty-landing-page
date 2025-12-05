@@ -65,7 +65,7 @@ export default function Carousel() {
           },
           800: {
             slidesPerView: 3,
-            spaceBetween: 130, // a partir de 800
+            spaceBetween: 20, // a partir de 800
             centeredSlides: true,
           },
         }}

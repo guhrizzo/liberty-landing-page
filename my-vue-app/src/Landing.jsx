@@ -24,7 +24,7 @@ function Landing() {
         {
             title: "Quero limpar meu nome",
             description: "Clique em saiba mais se quiser limpar seu nome!",
-            icon: "bi bi-person-fill-check", // 👈 só classe
+            icon: "bi bi-person-fill-check", 
             link: "/limpa-nome"
         },
         {

@@ -60,7 +60,7 @@
 @media (max-width:768px) {
 
     .img-car{
-        height: 25dvh;
+        height: 32dvh;
         background-size: contain;
         background-repeat: no-repeat;
         background-position: top center;
@@ -68,7 +68,7 @@
     }
 
     .broken-car-container {
-        margin-top: 26dvh;
+        margin-top: 30dvh;
     }
 
     .title-car{
