@@ -60,10 +60,8 @@ body.dark {
   & .landing-container,
   .ClearName-container,
   .Quit-container {
-    background-color: #1e1e1e;
-    background-image:
-      linear-gradient(rgba(247, 247, 247, 0.02) 1px, transparent 1px),
-      linear-gradient(to right, rgba(247, 247, 247, 0.02) 1px, transparent 1px);
+    background-color: #adadad1c;
+    
 
   }
 

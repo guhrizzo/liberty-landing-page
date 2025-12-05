@@ -25,8 +25,8 @@ function Footer() {
 
                     </div>
 
-                    <p className='info'>CNPJ: 58.659.797/0001-13</p>
-                    <p className='info'>Endereço: Rua Manoel Gusto, 290,JAÚ-SP</p>
+                    <p className='info'>CNPJ: 55.116.497/0001-08</p>
+                    <p className='info'>Endereço: AV. Dr quinzinho 995, sala 4</p>
                 </div>
                 <div className='dev'>
                     <p className="sub-title">Desenvolvedor: </p>

@@ -14,9 +14,8 @@ function App() {
     <DarkModeProvider>
       <BrowserRouter>
         <Routes>
-          <Route path='/' element={<Landing />} />
           <Route path='/limpa-nome' element={<LimpaNome />} />
-          <Route path='/quitacao-fatura' element={<Quitacao />} />
+          <Route path='/' element={<Quitacao />} />
           <Route path='*' element={''} />
         </Routes>
       </BrowserRouter>
