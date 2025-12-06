@@ -8,14 +8,15 @@
 
 .swiper-slide-active .slide {
   
-  border: 3px solid #008bf8;
+  border: 2px solid #70B8FF;
+
   transition: all 0.3s ease-in-out;
 }
 
 .slide {
   height: 300px;
-  background: #444;
-  color: white;
+  background: #c2bfbf25;
+  color: #3A3A3A;
   display: flex;
   border: 1px solid #807a7a56;
   align-items: start;
@@ -36,14 +37,15 @@
 
 .slide p{
     font-weight: 400;
-    color: #f2f2f2c0;
+    color: #3A3A3A;
 }
 
 .slide i{
     text-align: left;
     font-size: 24px;
-    background-color: #008bf8;
+    background-color: #70B8FF;
     padding: 12px 16px;
+    color: white;
     border-radius: 10px;
     border: 1px solid #ffffff23;
 }

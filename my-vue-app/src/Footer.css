@@ -3,6 +3,8 @@ footer {
     width: 100vw;
     height: auto;
     padding: 12px;
+    background-color: #0e0d0dd7;
+    border-top: 2px solid #c9c9c90e;
 }
 
 .foot-container{

@@ -26,7 +26,7 @@ const StyledWrapper = styled.div`
     width: 280px;
     height: 354px;
     border-radius: 20px;
-    background: ${({ isDark }) => (isDark ? "#2c2c2c" : "#f5f5f5")};
+    background: #f5f5f5;
     border: 2px solid ${({ isDark }) => (isDark ? "#555" : "#c3c6ce")};
     color: ${({ isDark }) => (isDark ? "#f1f1f1" : "#000")};
     position: relative;

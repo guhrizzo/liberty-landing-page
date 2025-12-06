@@ -10,43 +10,50 @@
   font-weight: bold;
   margin-bottom: 1.5rem;
   font-size: 2.3rem;
+  color: #111; /* Título mais forte */
 }
 
+/* ITEM */
 .faq-item {
-  border-bottom: 2px solid #ccc;
-  border-radius: 2px;
+  border-bottom: 2px solid #e3e3e3; /* borda mais suave e premium */
+  border-radius: 4px;
+  padding: 0.7rem 0;
 }
 
+/* PERGUNTA */
 .faq-question {
   background: none;
   border: none;
   width: 100%;
   text-align: left;
-  font-size: 1.1rem;
-  padding: 1rem 0;
+  font-size: 1.15rem;
+  padding: 0.8rem 0;
   cursor: pointer;
-  color: #f2f2f2;
+  
+  color: #222; /* muito mais legível */
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin-bottom: -10px;
+  
   font-weight: 600;
-  transition: color 0.3s;
+  transition: color 0.25s ease;
 }
 
 .faq-question:hover {
-  color: #007bff;
+  color: #0057E7; /* mesmo azul do seu botão */
 }
 
+/* RESPOSTA */
 .faq-answer {
   overflow: hidden;
-  font-size: 0.95rem;
-  color: #f2f2f2cb;
-  margin-top: 0px;
+  font-size: 1rem;
+  color: #444; /* mais suave porém ainda legível */
+  margin-top: 6px;
   margin-bottom: 10px;
-  line-height: 1.4;
+  line-height: 1.5;
 }
 
+/* Animações */
 .faq-answer[data-state='open'] {
   animation: slideDown 300ms ease-out forwards;
 }
@@ -78,7 +85,7 @@
 }
 
 @media screen and (max-width:768px) {
-    .faq-container{
-        margin: 0;
-    }
+  .faq-container {
+      margin: 0;
+  }
 }

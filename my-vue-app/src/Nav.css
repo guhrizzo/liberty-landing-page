@@ -1,9 +1,10 @@
 nav {
     width: 100vw;
     height: 7vh;
-    border-bottom: 2px solid #c9c9c97e;
+    
     display: flex;
-    background-color: #ffffff96;
+    background-color: rgba(14, 13, 13, 0.596);
+    border-bottom: 2px solid #c9c9c917;
     align-items: center;
     justify-content: space-between;
     padding: 0px 30px;
@@ -183,7 +184,7 @@ nav ul li:hover::after {
         width: 30px;
         height: 3px;
         border-radius: 20px;
-        background-color: black;
+        background-color: white;
         transition: all 0.4s ease-in-out;
     }
 }
