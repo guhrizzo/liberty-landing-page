@@ -196,11 +196,15 @@ body{
 .bg-faq {
     position: relative;
     width: 100vw;
-    background: #f4f4f4;
+    
+    
     color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     height: fit-content;
     padding: 0 1rem;
-    clip-path: ellipse(100% 93% at 50% 100%);
+   
 }
 
 .card-quit {
