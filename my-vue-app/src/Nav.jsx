@@ -26,23 +26,35 @@ function Nav() {
 
                 <div className={menuAtivo ? "navbar ativo" : "navbar"}>
                     <ul>
-                        
+
                         <a href="/" target="_blank" rel="noopener noreferrer">
                             <li className={currentPath === "/" ? "active" : ""}>Home</li>
                         </a>
-                        <a href="/limpa-nome" target="_blank" rel="noopener noreferrer">
+                        <a href="https://liberty-cred.vercel.app/" target="_blank" rel="noopener noreferrer">
                             <li className={currentPath === "/limpa-nome" ? "active" : ""}>Limpa Nome</li>
                         </a>
-                        <a href="/quitacao-fatura" target="_blank" rel="noopener noreferrer">
-                            <li className={currentPath === "/quitacao-fatura" ? "active" : ""}>Quitação Fatura</li>
+                        <li
+                            className={currentPath === "/depoimentos" ? "active" : ""}
+                            onClick={() => {
+                                const section = document.querySelector(".video-container");
+                                if (section) {
+                                    section.scrollIntoView({ behavior: "smooth" });
+                                }
+                                setmenuAtivo(false); 
+                            }}
+                        >
+                            Depoimentos
+                        </li>
+
+
+                        <a href="https://wa.me/5514998420710?text=Ol%C3%A1%2C%20tenho%20interesse%20em%20vender%20meu%20ve%C3%ADculo" target='_blank' rel='noopener noreferrer'>
+                            <li className={currentPath === "/contato" ? "active" : ""}>Contato</li>
                         </a>
 
-                        <li className={currentPath === "/depoimentos" ? "active" : ""}>Depoimentos</li>
-                        <li className={currentPath === "/contato" ? "active" : ""}>Contato</li>
                     </ul>
                 </div>
                 <div className="switch">
-                    
+
                 </div>
                 <div className={menuAtivo ? "lines ativo" : "lines"} onClick={alternarMenu}>
                     <div className="line"></div>

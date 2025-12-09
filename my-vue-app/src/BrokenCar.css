@@ -48,6 +48,12 @@
     border-radius: 30px;
     font-family: 'Inter', sans-serif;
     cursor: pointer;
+    transition: all 0.3s ease-in-out;
+}
+
+.btn-broken:hover {
+    background-color: #0077d1;
+    
 }
 
 .broken-car-container {

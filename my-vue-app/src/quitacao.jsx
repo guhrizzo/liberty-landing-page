@@ -31,7 +31,7 @@ function Quitacao() {
             <FollowCursor className="cursor" />
             <Nav />
             <BrokenCar />
-            <div className="carousel">
+            <div id="carousel-section" className="carousel">
                 <Carousel />
             </div>
             <a
