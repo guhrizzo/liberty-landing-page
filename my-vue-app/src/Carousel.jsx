@@ -12,8 +12,8 @@ import "aos/dist/aos.css";
 export default function Carousel() {
   useEffect(() => {
     AOS.init({
-      duration: 800, // duração da animação
-      once: true,    // anima apenas 1 vez
+      duration: 800,
+      once: true,
     });
   }, []);
 
@@ -31,7 +31,7 @@ export default function Carousel() {
     {
       icon: "bi-piggy-bank",
       title: "3. Mesmo sem carro, a dívida continua",
-      text: "Muita gente pensa: “Ah, se o banco levar, tudo bem”. Só que não é assim. Quando o carro vai a leilão, o valor arrecadado costuma ser muito abaixo da dívida — e você continua devendo a diferença."
+      text: "Quando o carro vai a leilão, o valor arrecadado costuma ser muito abaixo da dívida — e você continua devendo a diferença."
     },
     {
       icon: "bi-house-slash",
@@ -50,27 +50,16 @@ export default function Carousel() {
       <Swiper
         loop={true}
         centeredSlides={true}
-        pagination={{ clickable: true, type: "bullets" }}
-        modules={[Pagination, Navigation, EffectCreative]}
+        pagination={{ clickable: true }}
+        modules={[Pagination]}
+
+        slidesPerView={1.4}
+        spaceBetween={40}
         breakpoints={{
-          0: {
-            slidesPerView: 2,
-            spaceBetween: 130,
-            centeredSlides: false,
-          },
-          768: {
-            slidesPerView: 3,
-            spaceBetween: 60, // entre 768 e 799
-            centeredSlides: true,
-          },
-          800: {
-            slidesPerView: 3,
-            spaceBetween: 20, // a partir de 800
-            centeredSlides: true,
-          },
+          768: { slidesPerView: 2.5, spaceBetween: 80 },
+          1024: { slidesPerView: 3, spaceBetween: 100 },
         }}
       >
-
         {slides.map((slide, index) => (
           <SwiperSlide key={index}>
             <div
@@ -85,7 +74,6 @@ export default function Carousel() {
           </SwiperSlide>
         ))}
       </Swiper>
-
     </div>
   );
 }

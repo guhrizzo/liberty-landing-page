@@ -104,6 +104,10 @@ nav ul li:hover::after {
         z-index: 999 !important;
     }
 
+    nav ul li{
+        color: #000;
+    }
+
     .navbar {
         position: fixed;
         top: 0;
@@ -172,7 +176,7 @@ nav ul li:hover::after {
         display: flex;
         position: fixed;
         right: 30px;
-        top: 30px;
+        top: 37px;
         transform: translateY(-50%);
         flex-direction: column;
         gap: 8px;

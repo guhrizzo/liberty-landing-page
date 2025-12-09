@@ -47,7 +47,6 @@ function Nav() {
                 <div className={menuAtivo ? "lines ativo" : "lines"} onClick={alternarMenu}>
                     <div className="line"></div>
                     <div className="line"></div>
-                    <div className="line"></div>
                 </div>
             </nav>
         </div>

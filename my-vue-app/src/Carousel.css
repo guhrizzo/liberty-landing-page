@@ -1,118 +1,121 @@
 .carousel-wrapper {
   width: 100vw;
-  margin: 0;
-  padding: 0;
-  scale: 0.97;
-
-}
-
-.swiper-slide-active .slide {
-  
-  border: 2px solid #70B8FF;
-
-  transition: all 0.3s ease-in-out;
-}
-
-.slide {
-  height: 300px;
-  background: #c2bfbf25;
-  color: #3A3A3A;
+  height: 80dvh;
+  padding-top: 20px;
   display: flex;
-  border: 1px solid #807a7a56;
-  align-items: start;
   justify-content: center;
+  align-items: center;
+}
+
+/* Centraliza o Swiper */
+.swiper {
+  width: 100%;
+  height: 100%;
+}
+
+/* Alinha slides */
+.swiper-slide {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Card padrão */
+.slide {
+  width: 330px;
+  height: 420px;
+  background: #e8e8e8;
+  border-radius: 28px;
+  padding: 28px 22px;
+
+  display: flex;
   flex-direction: column;
-  padding-left: 12px;
-  padding-right: 12px;
-  border-radius: 12px;
+  justify-content: center;
+  align-items: center;
+
+  text-align: left;
+
+  transition: 0.35s ease;
   cursor: grab;
-  transition: all 0.3s ease-in-out;
+
+  box-shadow: 0px 8px 22px rgba(0, 0, 0, 0.15);
+  border: 1px solid #d4d4d4;
 }
 
-.slide h2{
-    margin: 16px 0;
-    font-weight: 600;
-    font-size: 18px;
+/* Ícone */
+.slide i {
+  font-size: 32px;
+  background: #70B8FF;
+  color: white;
+  padding: 14px 18px;
+  border-radius: 14px;
+  margin-bottom: 20px;
 }
 
-.slide p{
-    font-weight: 400;
-    color: #3A3A3A;
+
+.slide h2 {
+  width: 100%;
+  text-align: left;
+  font-size: 24px;
+  font-weight: 600;
+  margin: 20px 0;
+  color: #000;
 }
 
-.slide i{
-    text-align: left;
-    font-size: 24px;
-    background-color: #70B8FF;
-    padding: 12px 16px;
-    color: white;
-    border-radius: 10px;
-    border: 1px solid #ffffff23;
+/* Texto */
+.slide p {
+  text-align: left;
+  width: 100%;
+  color: #3A3A3A;
+  font-size: 16px;
+  font-weight: 400;
 }
 
-/* Bolinhas (paginaçao) */
-.swiper-pagination {
-  position: absolute !important; 
-  
-  margin-top: 20px; 
-  text-align: center;
+
+/* Slides laterais */
+.swiper-slide-prev .slide,
+.swiper-slide-next .slide {
+  background: #d4d4d4;
+  scale: 0.92;
+  opacity: 0.65;
 }
 
-.swiper-pagination-bullet {
-  background: #888;
+/* Slide destacado (ativo) */
+.swiper-slide-active .slide {
+  scale: 1.08;
   opacity: 1;
+  border: 2px solid #bcbcbc;
+  background: #ededed;
+}
+
+/* Paginação estilo iOS */
+.swiper-pagination-bullet {
+  width: 10px;
+  height: 10px;
+  background: #c5c5c5;
+  opacity: 1;
+  margin: 0 6px !important;
 }
 
 .swiper-pagination-bullet-active {
-  background: #008bf8;
+  background: #70B8FF;
+  width: 22px;
+  border-radius: 12px;
 }
 
-@media screen and (max-width: 768px){
-  .slide{
-    width: 235px;
+/* Mobile */
+@media (max-width: 768px) {
+  .slide {
+    width: 280px;
     height: 400px;
-    display: flex;
-    
-    align-items: center;
+    ;
   }
 
-  .slide h2{
-    font-size: 15px;
+  .slide h2 {
+    font-size: 20px;
   }
 
-  .slide i{
-    text-align: center;
-
-  }
-
-  .carousel-wrapper{
-    height: 45dvh;
-    
-  }
-
-  .swiper-wrapper{
-    height: 47dvh;
-    scale: 0.9;
-  }
-
-  .slide p{
+  .slide p {
     font-size: 14px;
-  }
-  .swiper-pagination.swiper-pagination-clickable.swiper-pagination-bullets.swiper-pagination-horizontal{
-    scale: 1.2;
-  }
-}
-
-@media screen and (max-width: 800px){
-  .slide{
-    width: 250px;
-  }
-
-  .swiper-wrapper{
-    height: 55dvh;
-  }
-
-  .carousel-wrapper{
-    height: 52dvh;
   }
 }

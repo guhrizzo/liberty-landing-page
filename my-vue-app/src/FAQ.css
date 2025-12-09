@@ -1,65 +1,106 @@
+/* CONTAINER */
 .faq-container {
   max-width: 600px;
   margin: 2rem auto;
   padding: 1rem;
-  font-family: Arial, sans-serif;
+  font-family: "Inter", sans-serif;
 }
 
+/* TITULO PRINCIPAL */
 .faq-container h2 {
-  text-align: center;
-  font-weight: bold;
-  margin-bottom: 1.5rem;
-  font-size: 2.3rem;
-  color: #111; /* Título mais forte */
+  text-align: left;
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+  font-size: 2rem;
+  color: #111;
+  line-height: 1.2;
+  font-family: "Inter", sans-serif;
 }
 
-/* ITEM */
+/* SUBTÍTULO */
+.faq-container h3 {
+  text-align: left;
+  font-weight: 600;
+  margin-bottom: 1.8rem;
+  font-size: 16px;
+  color: #444;
+  line-height: 1.4;
+  font-family: "Inter", sans-serif;
+}
+
+/* CADA CARD DO ACCORDION */
 .faq-item {
-  border-bottom: 2px solid #e3e3e3; /* borda mais suave e premium */
-  border-radius: 4px;
-  padding: 0.7rem 0;
+  background: #fff;
+  border-radius: 18px;
+  padding: 0.8rem 1.2rem;
+  margin-right: 10px;
+  margin-bottom: 1rem;
+  font-family: 'Inter', sans-serif;
+  border: 1px solid #e5e5e5;
+  box-shadow: 0px 2px 4px rgba(0,0,0,0.06);
 }
 
-/* PERGUNTA */
+/* BOTÃO DO ACCORDION */
 .faq-question {
   background: none;
   border: none;
   width: 100%;
   text-align: left;
-  font-size: 1.15rem;
-  padding: 0.8rem 0;
+  font-size: 1.1rem;
+  padding: 0.5rem 0;
   cursor: pointer;
-  
-  color: #222; /* muito mais legível */
+  font-family: 'Inter', sans-serif;
+  color: #111;
   display: flex;
   justify-content: space-between;
   align-items: center;
   
   font-weight: 600;
-  transition: color 0.25s ease;
+  transition: opacity 0.25s ease;
 }
 
 .faq-question:hover {
-  color: #0057E7; /* mesmo azul do seu botão */
+  opacity: 0.7;
 }
 
 /* RESPOSTA */
 .faq-answer {
   overflow: hidden;
-  font-size: 1rem;
-  color: #444; /* mais suave porém ainda legível */
-  margin-top: 6px;
-  margin-bottom: 10px;
+  font-size: 0.95rem;
+  color: #444; 
+  margin-top: 8px;
   line-height: 1.5;
 }
 
-/* Animações */
+/* ÍCONE DE + / - */
+.faq-icon {
+  font-size: 1.6rem;
+  font-weight: 400;
+  line-height: 1;
+  transition: transform 0.2s ease, color 0.2s ease;
+  color: #000;
+}
+
+/* QUANDO O ITEM ESTÁ ABERTO → vira "-" */
+.faq-question[data-state="open"] .faq-icon {
+  transform: rotate(45deg);
+  color: #0057E7; /* azul igual ao seu design */
+}
+
+/* Para o Radix: aplicar o atributo no pai (Item) */
+.faq-item[data-state="open"] .faq-icon {
+  transform: rotate(45deg);
+  color: #0057E7;
+}
+
+
+/* ANIMAÇÕES */
 .faq-answer[data-state='open'] {
-  animation: slideDown 300ms ease-out forwards;
+  animation: slideDown 260ms ease-out forwards;
 }
 
 .faq-answer[data-state='closed'] {
-  animation: slideUp 300ms ease-in forwards;
+  animation: slideUp 260ms ease-in forwards;
 }
 
 @keyframes slideDown {
@@ -84,8 +125,27 @@
   }
 }
 
-@media screen and (max-width:768px) {
+/* RESPONSIVIDADE */
+@media screen and (max-width:768px){} 
   .faq-container {
-      margin: 0;
+      margin: 2rem 1rem;
+      padding: 0;
+  }
+
+  .faq-container h2 {
+      font-size: 2.2rem;
+  }
+
+  .faq-container h3 {
+      font-size: 16px;
+      margin-bottom: 1.5rem;
+
+  .faq-item {
+      border-radius: 16px;
+      padding: 1rem 1.2rem;
+  }
+
+  .faq-question {
+      font-size: 1.05rem;
   }
 }

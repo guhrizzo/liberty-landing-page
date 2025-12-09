@@ -11,6 +11,7 @@ function BrokenCar() {
                 <p className='text-info'>Veja o que acontece <br />quando você tenta segurar <br /><span className='text-car-effect'>
                     Um carro que já está te afundando: </span>
                 </p>
+                <button className='btn-broken'> Saiba mais </button>
             </div>
         </div>
     )

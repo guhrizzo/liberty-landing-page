@@ -4,7 +4,7 @@
     background-position: bottom;
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: end;
     align-items: start;
     background-attachment: fixed;
     position: absolute;
@@ -15,6 +15,21 @@
     overflow: hidden;
     border-bottom: 2px solid #00000023;
     border-top: 2px solid #00000023;
+    border-radius:0 0 24px 24px;
+}
+
+.img-car::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.55); /* ajuste entre 0.3 e 0.65 */
+    z-index: 0;
+}
+
+
+.img-car * {
+    position: relative;
+    z-index: 1;
 }
 
 .broken-car-container {
@@ -71,39 +86,71 @@
 
 .text-car-effect {
     color: #008bf8;
+    font-family: "Inter", sans-serif;
 }
 
 @media (max-width:768px) {
 
     .img-car{
-        height: 32dvh;
-        background-size: contain;
-        background-repeat: no-repeat;
+        height: 103dvh;
+        background-size: cover;
         background-position: top center;
         background-image: url('assets/PictureCar.png');
     }
 
+    .img-car::before {
+        background: rgba(0, 0, 0, 0.65); /* mais forte no mobile */
+    }
+
+    .btn-broken{
+        margin-left: 25px;
+        margin-top: 20px;
+        margin-bottom: 100px;
+        padding: 10px 20px;
+        font-weight: 500;
+        width: 200px;
+        font-size: 18px;
+        background-color: #008bf8;
+        color: white;
+        border: none;
+        border-radius: 30px;
+        font-family: 'Inter', sans-serif;
+        cursor: pointer;
+    }
+
     .broken-car-container {
-        margin-top: 30dvh;
+        margin-top: 96dvh;
+    }
+
+    .text-car-effect {
+        
+        font-family: "Inter", sans-serif;
+        font-weight: 600;
+        font-size: 30px;
+        margin-bottom: 15px;
     }
 
     .title-car{
-        font-size: 20px;
+        font-size: 30px;
         text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.267);
         margin-left: 25px;
         margin-top: 45px;
-        margin-bottom: 5px;
+        margin-bottom: 15px;
+        
+        font-family: "Inter", sans-serif;
         z-index: 0;
     }
 
     .text-info{
-        font-size: 13px;
+        font-size: 30px;
         line-height: normal;
         font-weight: 600;
         margin-top: 0px;
+        font-family: "Inter", sans-serif;
         margin-bottom: 0;
         margin-left: 25px;
         text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.267);
+        
     }
 
     .exclamation{
@@ -115,7 +162,5 @@
 }
 
 @media (max-width:800px){
-    .title-car{
-        font-size: 17px;
-    }
+    
 }
