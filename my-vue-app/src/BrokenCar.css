@@ -118,6 +118,7 @@
     .img-car {
         height: 103dvh;
         background-size: cover;
+        background-attachment: scroll;
         background-position: top center;
         border-radius: 0 0 24px 24px;
         background-image: url('assets/PictureCar.png');
