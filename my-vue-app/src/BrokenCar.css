@@ -34,7 +34,7 @@
 }
 
 .title-car {
-    font-size: clamp(2rem, 5vw, 3.5rem); /* Fonte responsiva */
+    font-size: 48px;
     color: #ffffff;
     line-height: 1.1;
     font-weight: 800;
@@ -48,7 +48,7 @@
 }
 
 .text-info {
-    font-size: clamp(1.1rem, 2vw, 1.5rem);
+    font-size: 20px;
     color: #e0e0e0;
     margin-bottom: 30px;
     line-height: 1.6;
