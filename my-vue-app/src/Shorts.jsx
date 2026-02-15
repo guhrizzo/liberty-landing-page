@@ -62,9 +62,7 @@ const Shorts = () => {
                     className="video-touch-overlay" 
                     onClick={() => handleVideoClick(index)}
                   >
-                    <div className="play-hint">
-                       <Play size={40} color="white" fill="white" />
-                    </div>
+                    
                   </div>
                 )}
                 

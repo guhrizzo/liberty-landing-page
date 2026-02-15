@@ -218,10 +218,10 @@
   position: absolute;
   top: 0;
   left: 0;
-  width: 100%;
+  width: 150%;
   height: 100%;
   z-index: 10; /* Fica acima do iframe */
-  background: rgba(0, 0, 0, 0.1); /* Sombra leve opcional */
+ 
   display: flex;
   align-items: center;
   justify-content: center;
