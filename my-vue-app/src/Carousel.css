@@ -3,6 +3,7 @@
   background: #fdfdfd;
   /* Fundo levemente off-white */
   overflow: hidden;
+  width: 100%;
 }
 
 .carousel-header {

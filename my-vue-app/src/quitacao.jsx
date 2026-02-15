@@ -40,10 +40,7 @@ function Quitacao() {
             <FollowCursor className="cursor" />
             <Nav />
             <BrokenCar />
-            <div id="carousel-section" className="carousel">
-                <Carousel />
-
-            </div>
+            <Carousel />
             <a
                 href="https://wa.me/5514998420710?text=Ol%C3%A1%2C%20tenho%20interesse%20em%20vender%20meu%20ve%C3%ADculo"
                 target="_blank"
