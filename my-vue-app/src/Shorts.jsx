@@ -1,6 +1,6 @@
 import React from 'react';
 import { Swiper, SwiperSlide } from 'swiper/react';
-import { Navigation, Pagination } from 'swiper/modules';
+import { Navigation, Pagination, Mousewheel } from 'swiper/modules';
 import { Play } from 'lucide-react'; // Ícone sutil
 import 'swiper/css';
 import 'swiper/css/navigation';
@@ -29,19 +29,30 @@ const Shorts = () => {
 
       <div className="shorts-container-slick">
         <Swiper
-          spaceBetween={20}
-          slidesPerView={1}
+          spaceBetween={15} // Menos espaço no mobile fica mais elegante
+          slidesPerView={1.2} // ESSENCIAL: Mostra um pedaço do próximo slide
           centeredSlides={true}
           loop={true}
-          loopPreventsSliding={true}
-          navigation={true}
-          pagination={{ clickable: true }}
+          grabCursor={true}
+
+          // Melhora a sensibilidade do toque
+          touchEventsTarget="container"
+          threshold={5} // Pequeno deslocamento já inicia o swipe
+
+          // Configurações de Mouse/Touch
+          mousewheel={{ forceToAxis: true, releaseOnEdges: true }}
+
           breakpoints={{
-            768: { slidesPerView: 1, centeredSlides: false, spaceBetween: 30 },
-            1024: { slidesPerView: 3, centeredSlides: false },
-            1280: { slidesPerView: 4, centeredSlides: true , loop: false, initialSlide: 2},
+            // Mobile padrão
+            320: { slidesPerView: 1.2, spaceBetween: 15 },
+            // Tablet
+            768: { slidesPerView: 2.2, centeredSlides: false, spaceBetween: 25 },
+            // Desktop
+            1024: { slidesPerView: 3, centeredSlides: false, spaceBetween: 30 },
+            // Desktop Wide
+            1280: { slidesPerView: 4, centeredSlides: true, loop: false },
           }}
-          modules={[Navigation, Pagination]}
+          modules={[Navigation, Pagination, Mousewheel]}
           className="shorts-swiper-clean"
         >
           {videoUrls.map((url, index) => (
@@ -51,6 +62,7 @@ const Shorts = () => {
                   src={`${url}?modestbranding=1&rel=0&color=white`}
                   title={`Vídeo ${index + 1}`}
                   frameBorder="0"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                   allowFullScreen
                 ></iframe>
               </div>

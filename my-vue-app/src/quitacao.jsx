@@ -22,7 +22,7 @@ function Quitacao() {
     return (
         <div className='Quit-container'>
             <a
-                href="https://wa.me/5514998420710?"
+                href="https://wa.me/+5514998659046?"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="whatsapp-float"

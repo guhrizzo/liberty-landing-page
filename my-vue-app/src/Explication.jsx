@@ -4,32 +4,32 @@ import { BadgeCheck } from 'lucide-react';
 
 export default function Explication() {
   const cards = [
-    { 
-      icon: <CreditCard size={32} />, 
-      title: "Compramos com atraso", 
-      text: "Avaliamos a situação real e fazemos uma proposta clara, sem julgamentos." 
+    {
+      icon: <CreditCard size={32} />,
+      title: "Compramos com atraso",
+      text: "Avaliamos a situação real e fazemos uma proposta clara, sem julgamentos."
     },
-    { 
-      icon: <Banknote size={32} />, 
-      title: "Valor justo e alívio", 
-      text: "Assumimos a dívida e você recebe o valor da venda sem lidar com leilões." 
+    {
+      icon: <Banknote size={32} />,
+      title: "Valor justo e alívio",
+      text: "Assumimos a dívida e você recebe o valor da venda sem lidar com leilões."
     },
-    { 
-      icon: <UserCheck size={32} />, 
-      title: "Investidor Confiável", 
-      text: "Um parceiro assume a quitação em até 24 meses. Você não desembolsa nada." 
+    {
+      icon: <UserCheck size={32} />,
+      title: "Investidor Confiável",
+      text: "Um parceiro assume a quitação em até 24 meses. Você não desembolsa nada."
     },
-    { 
-      icon: <ShieldCheck size={32} />, 
-      title: "Transparência Total", 
-      text: "Contratos oficiais e registros públicos. Você acompanha cada etapa do processo." 
+    {
+      icon: <ShieldCheck size={32} />,
+      title: "Transparência Total",
+      text: "Contratos oficiais e registros públicos. Você acompanha cada etapa do processo."
     },
   ];
 
   return (
     <section className="explication-container">
       <div className="header-content">
-        <span className="badge1"> <BadgeCheck size={16} className="badge-icon"/>Sua Solução</span>
+        <span className="badge1"> <BadgeCheck size={16} className="badge-icon" />Sua Solução</span>
         <h1>
           Com a Liberty Car, você vira esse jogo
           <CheckCircle2 className="icon-title" />
@@ -49,10 +49,16 @@ export default function Explication() {
           </div>
         ))}
       </div>
-      
-      <button className="btn-sell">
-        Quero vender meu veiculo agora
-      </button>
+      <a
+        href="https://wa.me/+5514998659046?"
+        target="_blank"
+        rel="noopener noreferrer"
+
+      ><button className="btn-sell">
+          Quero vender meu veiculo agora
+        </button>
+      </a>
+
     </section>
   );
 }

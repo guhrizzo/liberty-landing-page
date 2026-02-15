@@ -61,10 +61,18 @@ export default function Carousel() {
           ))}
 
         </Swiper>
-        <button className="btn-msg">
-          Falar com especialista
-          <MessageCircle size={20} strokeWidth={2.5} />
-        </button>
+        <a
+          href="https://wa.me/+5514998659046?"
+          target="_blank"
+          rel="noopener noreferrer"
+
+        >
+          <button className="btn-msg">
+            Falar com especialista
+            <MessageCircle size={20} strokeWidth={2.5} />
+          </button>
+        </a>
+
       </div>
     </div>
   );

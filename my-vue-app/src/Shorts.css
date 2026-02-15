@@ -56,12 +56,13 @@
 
 /* CARD DE VÍDEO - PROPORÇÃO 9:16 */
 .video-card-minimal {
-  background: #000; /* Fundo preto para o iframe não brilhar ao carregar */
+  background: #000;
+  /* Fundo preto para o iframe não brilhar ao carregar */
   border: 1px solid #eeeeee;
   border-radius: clamp(16px, 3vw, 24px);
   width: 100%;
   /* Mantém o formato de celular independente da largura */
-  aspect-ratio: 9 / 16; 
+  aspect-ratio: 9 / 16;
   max-height: 650px;
   margin: 0 auto;
   overflow: hidden;
@@ -73,6 +74,7 @@
   width: 100%;
   height: 100%;
   border: none;
+  pointer-events: auto;
   display: block;
 }
 
@@ -86,25 +88,25 @@
 }
 
 /* CUSTOMIZAÇÃO DAS SETAS (SWIPER) */
-.swiper-button-next, 
+.swiper-button-next,
 .swiper-button-prev {
   background: #ffffff !important;
   color: #2563eb !important;
   width: 45px !important;
   height: 45px !important;
   border-radius: 50% !important;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.1) !important;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1) !important;
   border: 1px solid #f0f0f0 !important;
   transition: all 0.3s ease !important;
 }
 
-.swiper-button-next:hover, 
+.swiper-button-next:hover,
 .swiper-button-prev:hover {
   background: #2563eb !important;
   color: #ffffff !important;
 }
 
-.swiper-button-next::after, 
+.swiper-button-next::after,
 .swiper-button-prev::after {
   font-size: 18px !important;
   font-weight: bold;
@@ -127,7 +129,8 @@
 .swiper-pagination-bullet-active {
   background: #2563eb !important;
   opacity: 1 !important;
-  width: 24px !important; /* Efeito de pílula */
+  width: 24px !important;
+  /* Efeito de pílula */
   border-radius: 5px !important;
 }
 
@@ -149,13 +152,15 @@
   }
 
   .swiper-wrapper {
-    padding-bottom: 40px; /* Espaço extra para a paginação */
-    height: auto !important; /* Permite altura fluida no mobile */
+    padding-bottom: 40px;
+    /* Espaço extra para a paginação */
+    height: auto !important;
+    /* Permite altura fluida no mobile */
   }
 
-  .shorts-container-slick{
-    padding: 0;
-   
+  .shorts-container-slick {
+    padding: 0px;
+
   }
 
   /* Foco visual no slide ativo */
@@ -164,7 +169,21 @@
     transform: scale(0.9);
     transition: all 0.3s ease;
   }
-  
+
+  .swiper-slide {
+    touch-action: pan-y;
+    user-select: none;
+    -webkit-user-drag: none;
+  }
+
+  .shorts-swiper-clean {
+    /* Impede que o navegador tente lidar com o scroll horizontal, 
+     deixando o Swiper fazer o trabalho */
+    touch-action: pan-y !important;
+    overflow: visible !important;
+    /* Ajuda a não cortar o efeito de escala no mobile */
+  }
+
   .shorts-swiper-clean .swiper-slide-active {
     opacity: 1;
     transform: scale(1);
@@ -172,14 +191,15 @@
 
   .video-card-minimal {
     min-height: 700px;
-    
+
   }
 }
 
 /* CELULARES PEQUENOS */
 @media (max-width: 480px) {
+
   /* Remove setas para limpar a UI, usuário usa o dedo (swipe) */
-  .swiper-button-next, 
+  .swiper-button-next,
   .swiper-button-prev {
     display: none !important;
   }
