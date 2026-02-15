@@ -1,68 +1,84 @@
-import Logo from './assets/LOGO-VETORIZADA.png'
-import Switch from "./Switch"
-import './Nav.css'
-import { useState } from 'react'
-import { Link, useLocation } from 'react-router-dom'
-import Landing from './Landing'
-
+import React, { useState, useEffect } from 'react';
+import { Link, useLocation } from 'react-router-dom';
+import { Menu, X, ExternalLink } from 'lucide-react'; // Ícones modernos
+import Logo from './assets/LOGO-VETORIZADA.png';
+import './Nav.css';
 
 function Nav() {
-
     const location = useLocation();
     const currentPath = location.pathname;
+    const [menuAtivo, setMenuAtivo] = useState(false);
+    const [scrolled, setScrolled] = useState(false);
 
-    const [menuAtivo, setmenuAtivo] = useState(false)
+    // Efeito para mudar o fundo da nav ao rolar
+    useEffect(() => {
+        const handleScroll = () => setScrolled(window.scrollY > 50);
+        window.addEventListener('scroll', handleScroll);
+        return () => window.removeEventListener('scroll', handleScroll);
+    }, []);
 
-    const alternarMenu = () => {
-        setmenuAtivo(!menuAtivo)
-    }
+
+
+
+    const scrollToSection = (id) => {
+        const section = document.querySelector(id);
+        if (section) {
+            section.scrollIntoView({ behavior: "smooth" });
+        }
+        setMenuAtivo(false);
+    };
 
     return (
-        <div>
-            <nav>
-                <a href="/" rel="noopener noreferrer">
-                    <img src={Logo} alt="Logo LibertyCar" className="logo" />
+        <nav className={`nav-container ${scrolled ? 'scrolled' : ''}`}>
+
+
+            <Link to="/" className="logo-link">
+                <img src={Logo} alt="Logo LibertyCar" className="logo" />
+            </Link>
+
+            {/* Menu Desktop e Mobile */}
+            <div className={`navbar ${menuAtivo ? "ativo" : ""}`}>
+                <ul>
+                    <li>
+                        <Link to="/" className={currentPath === "/" ? "active" : ""} onClick={() => setMenuAtivo(false)}>
+                            Home
+                        </Link>
+                    </li>
+                    <li>
+                        <a href="https://libertycred.net.br" target="_blank" rel="noopener noreferrer">
+                            Limpa Nome
+                        </a>
+                    </li>
+                    <li className={currentPath === "/depoimentos" ? "active" : ""} onClick={() => scrollToSection(".video-container")}>
+                        Depoimentos
+                    </li>
+                    <li className="nav-cta-mobile">
+                        <a href="https://wa.me/5514998420710" target='_blank' rel='noopener noreferrer' className="btn-contact">
+                            Contato
+                        </a>
+                    </li>
+                </ul>
+            </div>
+            {/* Menu Hambúrguer com Lucide */}
+            <button
+                className={`menu-toggle ${menuAtivo ? "active" : ""}`}
+                onClick={() => setMenuAtivo(!menuAtivo)}
+            >
+                {menuAtivo ? <X size={28} /> : <Menu size={28} />}
+            </button>
+
+            {/* Botão de Contato Desktop */}
+            <div className="nav-actions">
+                <a href="https://wa.me/5514998420710" target='_blank' rel='noopener noreferrer' className="btn-contact-desktop">
+                    Falar com Especialista
                 </a>
 
-                <div className={menuAtivo ? "navbar ativo" : "navbar"}>
-                    <ul>
 
-                        <a href="/" target="_blank" rel="noopener noreferrer">
-                            <li className={currentPath === "/" ? "active" : ""}>Home</li>
-                        </a>
-                        <a href="https://liberty-cred.vercel.app/" target="_blank" rel="noopener noreferrer">
-                            <li className={currentPath === "/limpa-nome" ? "active" : ""}>Limpa Nome</li>
-                        </a>
-                        <li
-                            className={currentPath === "/depoimentos" ? "active" : ""}
-                            onClick={() => {
-                                const section = document.querySelector(".video-container");
-                                if (section) {
-                                    section.scrollIntoView({ behavior: "smooth" });
-                                }
-                                setmenuAtivo(false); 
-                            }}
-                        >
-                            Depoimentos
-                        </li>
+            </div>
 
+        </nav>
 
-                        <a href="https://wa.me/5514998420710?text=Ol%C3%A1%2C%20tenho%20interesse%20em%20vender%20meu%20ve%C3%ADculo" target='_blank' rel='noopener noreferrer'>
-                            <li className={currentPath === "/contato" ? "active" : ""}>Contato</li>
-                        </a>
-
-                    </ul>
-                </div>
-                <div className="switch">
-
-                </div>
-                <div className={menuAtivo ? "lines ativo" : "lines"} onClick={alternarMenu}>
-                    <div className="line"></div>
-                    <div className="line"></div>
-                </div>
-            </nav>
-        </div>
-    )
+    );
 }
 
-export default Nav
+export default Nav;

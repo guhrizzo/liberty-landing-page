@@ -12,6 +12,7 @@ import "aos/dist/aos.css";
 import Shorts from './Shorts'
 import FAQ from './FAQ'
 import TestimonialsSection from './testimonials'
+import Explication from './Explication'
 
 function Quitacao() {
 
@@ -21,18 +22,27 @@ function Quitacao() {
     return (
         <div className='Quit-container'>
             <a
-                href="https://wa.me/5514998420710?text=Ol%C3%A1%2C%20tenho%20interesse%20em%20vender%20meu%20ve%C3%ADculo"
+                href="https://wa.me/5514998420710?"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="whatsapp-float"
+                aria-label="Falar pelo WhatsApp"
             >
+                {/* Badge de notificação */}
+                <span className="whatsapp-badge">1</span>
+
+                {/* Ícone */}
                 <i className="bi bi-whatsapp"></i>
+
+                {/* Tooltip opcional que aparece no hover */}
+                <span className="whatsapp-tooltip">Fale conosco</span>
             </a>
             <FollowCursor className="cursor" />
             <Nav />
             <BrokenCar />
             <div id="carousel-section" className="carousel">
                 <Carousel />
+
             </div>
             <a
                 href="https://wa.me/5514998420710?text=Ol%C3%A1%2C%20tenho%20interesse%20em%20vender%20meu%20ve%C3%ADculo"
@@ -40,11 +50,7 @@ function Quitacao() {
                 rel="noopener noreferrer"
 
             >
-                <button className='btn-msg'>
-                    <p>Quero mudar Isso</p>
 
-                    <i class="bi bi-arrow-up-right-circle-fill"></i>
-                </button>
             </a>
 
             {/*
@@ -103,52 +109,11 @@ function Quitacao() {
 
             </div>     
              */}
-
-            <div className="explication" data-aos="fade-up">
-                <h1>
-                    Com a Liberty Car, você vira esse jogo
-                    <i className="bi bi-shield-fill-check right"></i>
-                </h1>
-                <h2 className='h2'>
-                    Nós compramos seu carro com dívida — do jeito que está
-                    Enquanto outros te oferecem <br /> “ajuda para negociar com o banco”, nós fazemos diferente:
-                </h2>
-                <div className="cards">
-                    {[
-                        { icon: "bi-credit-card", text: "✔ Compramos seu carro mesmo com parcelas em atraso <br />Sem julgamentos. Avaliamos a situação real e fazemos uma proposta clara." },
-                        { icon: "bi-cash-coin", text: "✔ Você recebe um valor justo e se livra da dívida A Liberty Car assume a dívida, e você recebe o valor da venda — sem precisar lidar com leilão, advogado ou apreensão." },
-                        { icon: "bi-person-check", text: "✔ Um investidor confiável entra no processo, assume a quitação desse veiculo em até 24 meses, garantindo que seu carro seja quitado sem que você precise desembolsar nada" },
-                        { icon: "bi-patch-check", text: "✔ Tudo feito com segurança e transparência Trabalhamos com contratos oficiais, registros públicos e você acompanha cada etapa." },
-                        ,
-                    ].map((card, index) => (
-                        <div className="card-quit" key={index} data-aos="fade-up" data-aos-delay={index * 150}>
-                            <i className={`bi ${card.icon}`}></i>
-                            <p dangerouslySetInnerHTML={{ __html: card.text }} />
-                        </div>
-                    ))}
-
-                </div>
-
-                <button className='btn-sell'><a href="https://wa.me/5514998420710?text=Ol%C3%A1%2C%20tenho%20interesse%20em%20vender%20meu%20ve%C3%ADculo" target='_blank' rel="noopener noreferrer">Quero Vender Meu Veículo</a> </button>
-            </div>
-
-            <div className='video-container'>
-                <h1>Veja o depoimento dos nossos clientes!</h1>
-                <TestimonialsSection />
-                <Shorts />
-                <div className='button-div'>
-                    <button className='btn-lm'><a href="https://wa.me/5514998420710?text=Ol%C3%A1%2C%20tenho%20interesse%20em%20vender%20meu%20ve%C3%ADculo" target='_blank' rel="noopener noreferrer">Quero conhecer mais!</a> </button>
-                </div>
-            </div>
-            <div
-                className='bg-faq'
-                data-aos="fade-up"
-                data-aos-delay="200" 
-            >
-    
-                <FAQ />
-            </div>
-            <Footer /> 
+            <Explication />
+            <Shorts />
+            <TestimonialsSection />
+            <FAQ />
+            <Footer />
         </div>
     )
 }

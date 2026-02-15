@@ -1,0 +1,273 @@
+.explication-container {
+    width: 100%;
+    padding: 80px 5%;
+    background-color: #0d0d0d;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border-top: 1px solid rgba(255, 255, 255, 0.05);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+    /* Efeito de iluminação suave no fundo */
+    background: radial-gradient(circle at top, #16213e 0%, #0d0d0d 100%);
+}
+
+.header-content {
+    text-align: center;
+    max-width: 800px;
+    margin-bottom: 60px;
+}
+
+.header-content .badge1 {
+    color: #008bf8;
+    background: rgba(0, 139, 248, 0.1);
+    padding: 6px 16px;
+    border-radius: 50px;
+    font-size: 14px;
+    font-weight: 700;
+    text-transform: uppercase;
+}
+
+.badge1{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid rgba(0, 139, 248, 0.15);
+    margin: 10px auto;
+    gap: 8px;
+    max-width: 180px;
+}
+
+.header-content h1 {
+    
+    color: #ffffff;
+    margin: 20px 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+}
+
+.icon-title {
+    color: #008bf8;
+}
+
+.subtitle {
+    font-size: 18px;
+    color: #b0b0b0;
+    line-height: 1.6;
+}
+
+/* Grid de Cards */
+.cards-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 25px;
+    width: 100%;
+    max-width: 1200px;
+    margin-bottom: 50px;
+}
+
+.card-item {
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    padding: 40px 25px;
+    border-radius: 20px;
+    
+    display: flex;
+    
+    flex-direction: column;
+    align-items: flex-start; /* Alinhamento à esquerda é melhor para leitura */
+}
+
+.icon-wrapper {
+    color: #008bf8;
+    background: rgba(0, 139, 248, 0.1);
+    width: 60px;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 15px;
+    margin-bottom: 20px;
+}
+
+.card-item h3 {
+    color: #ffffff;
+    font-size: 20px;
+    margin-bottom: 15px;
+    font-weight: 700;
+}
+
+.card-item p {
+    color: #b0b0b0;
+    font-size: 15px;
+    line-height: 1.6;
+    margin: 0;
+}
+
+/* Botão de Venda */
+.btn-sell {
+    padding: 18px 45px;
+    border-radius: 50px;
+    font-weight: 700;
+    font-size: 16px;
+    cursor: pointer;
+    border: none;
+    background: #008bf8;
+    color: #ffffff;
+    transition: all 0.3s ease;
+    
+}
+
+.btn-sell:hover {
+    transform: scale(1.01);
+    background: #0077d1;
+}
+
+@media (max-width: 768px) {
+    .explication-container {
+    width: 100%;
+    padding: clamp(40px, 10vh, 80px) 5%; /* Padding vertical fluido */
+    background-color: #ffffff;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    /* Substituí o gradiente escuro por um radial suave claro */
+    background: radial-gradient(circle at top, #f8faff 0%, #ffffff 100%);
+}
+
+.header-content {
+    text-align: center;
+    max-width: 800px;
+    margin-bottom: clamp(30px, 8vw, 60px);
+}
+
+.header-content .badge1 {
+    display: inline-flex; /* Melhor que flex para badges */
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    color: #008bf8;
+    background: rgba(0, 139, 248, 0.08);
+    padding: 6px 16px;
+    border-radius: 50px;
+    font-size: 13px;
+    font-weight: 700;
+    text-transform: uppercase;
+    border: 1px solid rgba(0, 139, 248, 0.1);
+    margin: 0 auto 15px;
+}
+
+.icon-title{
+    display: none;
+}
+
+.header-content h1 {
+    color: #1a1a1a;
+    /* Fonte cresce conforme a tela: min 28px, max 42px */
+    font-size: clamp(32px, 5vw, 42px);
+    margin: 15px 0;
+    line-height: 1.2;
+    display: flex;
+    flex-wrap: wrap; /* Evita quebra feia se houver ícone e texto */
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+}
+
+.subtitle {
+    font-size: clamp(15px, 2vw, 18px);
+    color: #666666;
+    line-height: 1.6;
+    padding: 0px 10px;
+}
+
+/* Grid de Cards Otimizado */
+.cards-grid {
+    display: grid;
+    /* auto-fit garante que os cards ocupem o espaço todo, mas com limite de 300px */
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: clamp(15px, 3vw, 25px);
+    width: 100%;
+    max-width: 1200px;
+    margin-bottom: 40px;
+}
+
+.card-item {
+    background: #ffffff;
+    border: 1px solid #f0f0f0;
+    padding: clamp(25px, 5vw, 40px);
+    border-radius: 24px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.02);
+}
+
+.card-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 30px rgba(0, 139, 248, 0.08);
+    border-color: #008bf8;
+}
+
+.icon-wrapper {
+    color: #008bf8;
+    background: rgba(0, 139, 248, 0.08);
+    width: 56px;
+    height: 56px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 16px;
+    margin-bottom: 20px;
+}
+
+.card-item h3 {
+    color: #1a1a1a;
+    font-size: 20px;
+    margin-bottom: 12px;
+    font-weight: 700;
+}
+
+.card-item p {
+    color: #555555;
+    font-size: 15px;
+    line-height: 1.5;
+}
+
+/* Botão Melhorado */
+.btn-sell {
+    
+    padding: 16px 40px;
+    border-radius: 50px;
+    font-weight: 700;
+    font-size: 16px;
+    cursor: pointer;
+    border: none;
+    background: #008bf8;
+    color: #ffffff;
+    box-shadow: 0 8px 20px rgba(0, 139, 248, 0.2);
+    transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+/* Ajustes Mobile Finos */
+@media (max-width: 768px) {
+    .explication-container { 
+        padding: 40px 20px; 
+    }
+    
+    .card-item { 
+        align-items: center; 
+        text-align: center; 
+        padding: 30px 20px;
+    }
+    
+    .header-content h1 {
+        flex-direction: column; /* Ícone em cima do texto se for muito grande */
+        gap: 5px;
+    }
+
+    
+}
+}

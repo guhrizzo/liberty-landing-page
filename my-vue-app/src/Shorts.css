@@ -1,100 +1,194 @@
-.shorts-container {
-  display: flex;
-  flex-direction: row;
+/* ============================================================
+   SHORTS SECTION - CLEAN LIGHT THEME
+   ============================================================ */
+
+.shorts-section-clean {
+  /* Padding fluido: adapta-se entre 40px e 80px dependendo da tela */
+  padding: clamp(40px, 8vw, 80px) 5%;
+  background-color: #fcfcfc;
+  overflow: hidden;
+  width: 100dvw;
+  font-family: 'Inter', sans-serif;
+}
+
+.shorts-header {
+  text-align: center;
+  margin-bottom: clamp(30px, 5vw, 50px);
+}
+
+.inline-badge {
+  display: inline-flex;
   align-items: center;
+  gap: 8px;
+  color: #2563eb;
+  background: rgba(37, 99, 235, 0.08);
+  padding: 6px 16px;
+  border-radius: 50px;
+  font-weight: 700;
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-bottom: 12px;
 }
 
-.shorts-grid {
-  display: flex;
-  flex-direction: row;
+.shorts-header h2 {
+  font-size: clamp(1.5rem, 4vw, 2.2rem);
+  color: #1a1a1a;
+  font-weight: 800;
+  margin-bottom: 10px;
+  line-height: 1.2;
 }
 
-.video-card {
+.shorts-header p {
+  color: #666;
+  font-size: clamp(15px, 2vw, 18px);
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+/* CONTAINER DO CARROSSEL */
+.shorts-container-slick {
+  max-width: 1400px;
+  margin: 0 auto;
   position: relative;
-  width: 340px;
-  height: 700px;
-  border-radius: 12px;
-  margin: 20px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  padding: 0 10px;
 }
 
-.video-bg iframe {
-  position: absolute;
-  top: 0;
-  left: 0;
+/* CARD DE VÍDEO - PROPORÇÃO 9:16 */
+.video-card-minimal {
+  background: #000; /* Fundo preto para o iframe não brilhar ao carregar */
+  border: 1px solid #eeeeee;
+  border-radius: clamp(16px, 3vw, 24px);
+  width: 100%;
+  /* Mantém o formato de celular independente da largura */
+  aspect-ratio: 9 / 16; 
+  max-height: 650px;
+  margin: 0 auto;
+  overflow: hidden;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.video-card-minimal iframe {
   width: 100%;
   height: 100%;
-  filter: blur(100px) brightness(.6);
-  transform: scale(1.0);
-  z-index: -1;
-  pointer-events: none;
+  border: none;
+  display: block;
 }
 
-.video-front {
-  position: relative;
-  width: 100%;
-  height: 100%;
-  z-index: 2;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.video-front iframe {
-  width: 100%;
-  height: 100%;
-  border-radius: 12px;
-}
-
-@media screen and (max-width: 768px) {
-  .shorts-container {
-    flex-direction: column;
-    overflow-x: hidden;
-  }
-
-  /* Carrossel horizontal no mobile */
-  .shorts-swiper {
-    width: 100vw;
-    height: 100dvh;
-    overflow-x: hidden;
-  }
-
-  .video-card {
-    width: 100vw;
-    height: 100dvh;
-    margin: 0;
-    border-radius: 0;
-  }
-
-  .video-front {
-    scale: 0.9;
-  }
-
-  .video-bg {
-    scale: 1.1;
-  }
-
-  .swiper.swiper-initialized.swiper-horizontalswiper-ios.swiper-backface-hidden.shorts-swiper {
-    overflow-x: hidden;
-    opacity: 0;
+/* HOVER APENAS EM DESKTOP */
+@media (min-width: 1024px) {
+  .video-card-minimal:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 20px 40px rgba(37, 99, 235, 0.12);
+    border-color: #2563eb;
   }
 }
 
+/* CUSTOMIZAÇÃO DAS SETAS (SWIPER) */
+.swiper-button-next, 
+.swiper-button-prev {
+  background: #ffffff !important;
+  color: #2563eb !important;
+  width: 45px !important;
+  height: 45px !important;
+  border-radius: 50% !important;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1) !important;
+  border: 1px solid #f0f0f0 !important;
+  transition: all 0.3s ease !important;
+}
 
-@media (max-width: 800px) {
-  .video-front {
-    scale: 0.8;
-    width: 460px;
+.swiper-button-next:hover, 
+.swiper-button-prev:hover {
+  background: #2563eb !important;
+  color: #ffffff !important;
+}
+
+.swiper-button-next::after, 
+.swiper-button-prev::after {
+  font-size: 18px !important;
+  font-weight: bold;
+}
+
+/* PAGINAÇÃO (PONTINHOS) */
+.swiper-pagination {
+  position: relative !important;
+  margin-top: 30px !important;
+}
+
+.swiper-pagination-bullet {
+  width: 8px !important;
+  height: 8px !important;
+  background: #ccc !important;
+  opacity: 0.5 !important;
+  transition: all 0.3s ease !important;
+}
+
+.swiper-pagination-bullet-active {
+  background: #2563eb !important;
+  opacity: 1 !important;
+  width: 24px !important; /* Efeito de pílula */
+  border-radius: 5px !important;
+}
+
+/* ============================================================
+   RESPONSIVIDADE AJUSTADA
+   ============================================================ */
+
+/* TABLETS E TELAS MÉDIAS */
+@media (max-width: 1024px) {
+  .video-card-minimal {
+    max-height: 550px;
+  }
+}
+
+/* MOBILE */
+@media (max-width: 768px) {
+  .shorts-section-clean {
+    padding: 40px 15px;
   }
 
-  .video-bg {
-    scale: 1.15;
+  .swiper-wrapper {
+    padding-bottom: 40px; /* Espaço extra para a paginação */
+    height: auto !important; /* Permite altura fluida no mobile */
   }
 
-  .swiper-button-next::after,.swiper-button-prev{
-    scale: 0.65;
+  .shorts-container-slick{
+    padding: 0;
+   
+  }
 
+  /* Foco visual no slide ativo */
+  .shorts-swiper-clean .swiper-slide {
+    opacity: 0.4;
+    transform: scale(0.9);
+    transition: all 0.3s ease;
+  }
+  
+  .shorts-swiper-clean .swiper-slide-active {
+    opacity: 1;
+    transform: scale(1);
+  }
+
+  .video-card-minimal {
+    min-height: 700px;
+    
+  }
+}
+
+/* CELULARES PEQUENOS */
+@media (max-width: 480px) {
+  /* Remove setas para limpar a UI, usuário usa o dedo (swipe) */
+  .swiper-button-next, 
+  .swiper-button-prev {
+    display: none !important;
+  }
+
+  .shorts-header h2 {
+    font-size: 1.2rem;
+  }
+
+  .video-card-minimal {
+    max-height: 480px;
   }
 }

@@ -1,191 +1,108 @@
-.img-car {
-    background-image: url('assets/PictureCarSnokeBlack.png');
-    background-size: cover;
-    background-position: bottom;
-    display: flex;
-    flex-direction: column;
-    justify-content: end;
-    align-items: start;
-    background-attachment: fixed;
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100vw;
-    height: 70vh;
-    
-    overflow: hidden;
-    border-bottom: 2px solid #00000023;
-    border-top: 2px solid #00000023;
-    
+/* Container Principal */
+.broken-car-section {
+    position: relative;
+    width: 100%;
+    min-height: 100vh; /* Melhor que margin-top fixo */
 }
 
-.img-car::before {
+.img-car-hero {
+    background-image: url('assets/PictureCarSnokeBlack.png');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    align-items: center; /* Centraliza verticalmente o conteúdo */
+    padding: 0 5%;
+}
+
+/* Overlay mais suave mas eficiente */
+.img-car-hero::before {
     content: "";
     position: absolute;
     inset: 0;
-    background: rgba(0, 0, 0, 0.55);
-    /* ajuste entre 0.3 e 0.65 */
-    z-index: 0;
-}
-
-
-.img-car * {
-    position: relative;
+    background: linear-gradient(to right, rgba(0,0,0,0.8) 0%, rgba(0,0,0,0.3) 100%);
     z-index: 1;
 }
 
-.btn-broken {
-    margin-left: 40px;
-    margin-top: 20px;
-    margin-bottom: 100px;
-    padding: 10px 20px;
-    font-weight: 500;
-    width: 200px;
-    font-size: 18px;
-    background-color: #008bf8;
-    color: white;
-    border: none;
-    border-radius: 30px;
-    font-family: 'Inter', sans-serif;
-    cursor: pointer;
-    transition: all 0.3s ease-in-out;
-}
-
-.btn-broken:hover {
-    background-color: #0077d1;
-    
-}
-
-.broken-car-container {
-    margin-top: 70vh;
-}
-
-.exclamation {
-    margin-left: 40px;
-    background-color: #008bf8;
-    width: 15vw;
-    padding: 12px 12px;
-    border-radius: 40px;
-    margin-top: 40px;
-    font-size: 18px;
-    border: 1px solid #ffffff28;
-    text-align: center;
+.content-wrapper {
+    position: relative;
+    z-index: 2;
+    max-width: 800px;
 }
 
 .title-car {
-    font-size: 54px;
+    font-size: clamp(2rem, 5vw, 3.5rem); /* Fonte responsiva */
+    color: #ffffff;
+    line-height: 1.1;
+    font-weight: 800;
     text-align: left;
-    margin-left: 40px;
-
-    margin-top: 20px;
-    color: #ffffff;
-    text-transform: capitalize;
-
-    & .text-car-effect {
-        text-decoration: none;
-    }
-}
-
-.text-info {
-    margin-left: 40px;
-    font-size: 24px;
-    color: #ffffff;
-    margin-top: 20px;
-    font-weight: 500;
-    line-height: 1.5;
-}
-
-.text-info.title-car::before {
-    background-color: black;
-    width: 100%;
-    height: 100%;
-    position: absolute;
-    top: 0;
-    left: 0;
-    z-index: -1;
-    opacity: 0.3;
-    content: '';
-
+    margin-bottom: 20px;
 }
 
 .text-car-effect {
     color: #008bf8;
-    font-family: "Inter", sans-serif;
+    display: block; /* Garante que o destaque fique em nova linha se necessário */
 }
 
-@media (max-width:768px) {
+.text-info {
+    font-size: clamp(1.1rem, 2vw, 1.5rem);
+    color: #e0e0e0;
+    margin-bottom: 30px;
+    line-height: 1.6;
+}
 
-    .img-car {
-        height: 103dvh;
-        background-size: cover;
-        background-attachment: scroll;
-        background-position: top center;
-        border-radius: 0 0 24px 24px;
+.text-car-highlight {
+    color: #008bf8;
+    font-weight: 600;
+}
+
+.btn-broken {
+    padding: 15px 40px;
+    font-size: 18px;
+    font-weight: 600;
+    background-color: #008bf8;
+    color: white;
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: transform 0.2s, background 0.3s;
+    box-shadow: 0 4px 15px rgba(0, 139, 248, 0.3);
+}
+
+.btn-broken:hover {
+    background-color: #0077d1;
+    transform: translateY(-3px);
+}
+
+/* --- Media Queries Mobile --- */
+@media (max-width: 768px) {
+    .img-car-hero {
+        height: 100dvh;
+        background-attachment: scroll; /* Fixed causa lag no mobile */
         background-image: url('assets/PictureCar.png');
+        align-items: flex-end; /* Conteúdo vai para baixo no mobile */
+        padding-bottom: 60px;
     }
 
-    .img-car::before {
-        background: rgba(0, 0, 0, 0.65);
-        /* mais forte no mobile */
-    }
-
-    .btn-broken {
-        margin-left: 25px;
-        margin-top: 20px;
-        margin-bottom: 100px;
-        padding: 10px 20px;
-        font-weight: 500;
-        width: 200px;
-        font-size: 18px;
-        background-color: #008bf8;
-        color: white;
-        border: none;
-        border-radius: 30px;
-        font-family: 'Inter', sans-serif;
-        cursor: pointer;
-    }
-
-    .broken-car-container {
-        margin-top: 96dvh;
-    }
-
-    .text-car-effect {
-
-        font-family: "Inter", sans-serif;
-        font-weight: 600;
-        font-size: 30px;
-        margin-bottom: 15px;
+    .img-car-hero::before {
+        background: rgba(0, 0, 0, 0.6);
     }
 
     .title-car {
-        font-size: 30px;
-        text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.267);
-        margin-left: 25px;
-        margin-top: 45px;
-        margin-bottom: 15px;
-
-        font-family: "Inter", sans-serif;
-        z-index: 0;
+        font-size: 28px;
+        margin-left: 0;
     }
 
     .text-info {
-        font-size: 30px;
-        line-height: normal;
-        font-weight: 600;
-        margin-top: 0px;
-        font-family: "Inter", sans-serif;
-        margin-bottom: 0;
-        margin-left: 25px;
-        text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.267);
-
+        font-size: 18px;
+        margin-left: 0;
     }
 
-    .exclamation {
-        width: 60dvw;
-        margin-top: 70px;
-        margin-left: -25px;
-        scale: 0.6;
+    .btn-broken {
+        width: 100%; /* Botão full width no mobile é melhor para o polegar */
+        max-width: 280px;
     }
 }
-
-@media (max-width:800px) {}
