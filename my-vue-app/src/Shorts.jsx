@@ -1,7 +1,7 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Navigation, Pagination, Mousewheel } from 'swiper/modules';
-import { Play } from 'lucide-react'; // Ícone sutil
+import { Play } from 'lucide-react';
 import 'swiper/css';
 import 'swiper/css/navigation';
 import 'swiper/css/pagination';
@@ -16,12 +16,19 @@ const Shorts = () => {
     "https://www.youtube.com/embed/LZ3BiSls_Oo"
   ];
 
+  // Estado para controlar quais vídeos já foram "desbloqueados" pelo clique
+  const [activeVideos, setActiveVideos] = useState({});
+
+  const handleVideoClick = (index) => {
+    setActiveVideos((prev) => ({ ...prev, [index]: true }));
+  };
+
   return (
     <section className="shorts-section-clean">
       <div className="shorts-header">
         <div className="faq-badge">
           <Play size={14} fill="currentColor" />
-          <span className=''>Vídeos Rápidos</span>
+          <span>Vídeos Rápidos</span>
         </div>
         <h2>Veja o depoimento dos nossos clientes!</h2>
         <p>Confira os bastidores e depoimentos em formato de vídeo.</p>
@@ -29,39 +36,41 @@ const Shorts = () => {
 
       <div className="shorts-container-slick">
         <Swiper
-          spaceBetween={15} // Menos espaço no mobile fica mais elegante
-          slidesPerView={1.2} // ESSENCIAL: Mostra um pedaço do próximo slide
+          modules={[Navigation, Pagination, Mousewheel]}
+          spaceBetween={15}
+          slidesPerView={1.2} // Mostra um pedaço do próximo para induzir o swipe
           centeredSlides={true}
           loop={true}
           grabCursor={true}
-
-          // Melhora a sensibilidade do toque
-          touchEventsTarget="container"
-          threshold={5} // Pequeno deslocamento já inicia o swipe
-
-          // Configurações de Mouse/Touch
-          mousewheel={{ forceToAxis: true, releaseOnEdges: true }}
-
+          threshold={10} // Sensibilidade do toque
+          touchStartPreventDefault={false} // Importante para não travar o scroll vertical
+          pagination={{ clickable: true }}
+          navigation={true}
           breakpoints={{
-            // Mobile padrão
-            320: { slidesPerView: 1.2, spaceBetween: 15 },
-            // Tablet
-            768: { slidesPerView: 2.2, centeredSlides: false, spaceBetween: 25 },
-            // Desktop
-            1024: { slidesPerView: 3, centeredSlides: false, spaceBetween: 30 },
-            // Desktop Wide
-            1280: { slidesPerView: 4, centeredSlides: true, loop: false },
+            768: { slidesPerView: 2, centeredSlides: false },
+            1024: { slidesPerView: 3 },
+            1280: { slidesPerView: 4, centeredSlides: true, loop: false }
           }}
-          modules={[Navigation, Pagination, Mousewheel]}
           className="shorts-swiper-clean"
         >
           {videoUrls.map((url, index) => (
             <SwiperSlide key={index}>
               <div className="video-card-minimal">
+                {/* CAMADA DE TOQUE: Ela fica por cima do iframe */}
+                {!activeVideos[index] && (
+                  <div 
+                    className="video-touch-overlay" 
+                    onClick={() => handleVideoClick(index)}
+                  >
+                    <div className="play-hint">
+                       <Play size={40} color="white" fill="white" />
+                    </div>
+                  </div>
+                )}
+                
                 <iframe
-                  src={`${url}?modestbranding=1&rel=0&color=white`}
+                  src={`${url}?modestbranding=1&rel=0&color=white${activeVideos[index] ? '&autoplay=1' : ''}`}
                   title={`Vídeo ${index + 1}`}
-                  frameBorder="0"
                   allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                   allowFullScreen
                 ></iframe>
