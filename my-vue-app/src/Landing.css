@@ -17,23 +17,6 @@
     margin-bottom: 5px;
 }
 
-.landing-container {
-    width: 100vw;
-    height: 100vh;
-    display: flex;
-    flex-direction: column;
-    background-color: #e5e5e5;
-
-    background-image:
-        linear-gradient(rgba(17, 17, 17, 0.02) 1px, transparent 1px),
-        linear-gradient(to right, rgba(17, 17, 17, 0.02) 1px, transparent 1px);
-
-    background-size: 40px 40px;
-    background-repeat: repeat;
-    background-position: top left;
-    z-index: 999;
-}
-
 .apresentacao{
     display: flex;
     align-items: center;

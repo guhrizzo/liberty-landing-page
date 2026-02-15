@@ -58,7 +58,7 @@ export default function TestimonialsSection() {
       </div>
       <div className='button-div'>
         <a
-          href="https://wa.me/5514998420710?text=Olá..."
+          href="https://wa.me/+5514998659046?"
           target='_blank'
           rel="noopener noreferrer"
           className='btn-lm'
