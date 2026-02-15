@@ -81,7 +81,7 @@
 @media (max-width: 768px) {
     .img-car-hero {
         height: 100dvh;
-        background-attachment: scroll; /* Fixed causa lag no mobile */
+        background-attachment: fixed; /* Fixed causa lag no mobile */
         background-image: url('assets/PictureCar.png');
         align-items: flex-end; /* Conteúdo vai para baixo no mobile */
         padding-bottom: 60px;
