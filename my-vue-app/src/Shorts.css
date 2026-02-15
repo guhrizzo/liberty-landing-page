@@ -148,8 +148,15 @@
 /* MOBILE */
 @media (max-width: 768px) {
   .shorts-section-clean {
-    padding: 40px 15px;
-  }
+  padding: clamp(40px, 8vw, 80px) 0; /* Removi o 5% das laterais para não conflitar com o Swiper */
+  background-color: #fcfcfc;
+  width: 100%; /* Use 100% em vez de 100dvw */
+  max-width: 100vw; /* Garante que nada passe da borda da tela */
+  overflow: hidden; /* Corta qualquer sombra ou elemento que tente sair da tela */
+  font-family: 'Inter', sans-serif;
+  display: block;
+  box-sizing: border-box;
+}
 
   .swiper-wrapper {
     padding-bottom: 40px;
