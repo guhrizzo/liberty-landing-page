@@ -2,7 +2,7 @@ import './BrokenCar.css';
 
 function BrokenCar() {
     const handleScroll = () => {
-        const section = document.querySelector("#carousel-section");
+        const section = document.querySelector(".carousel-section-container");
         if (section) {
             section.scrollIntoView({ behavior: "smooth" });
         }

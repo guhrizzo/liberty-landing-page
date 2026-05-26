@@ -9,17 +9,12 @@ function Nav() {
     const currentPath = location.pathname;
     const [menuAtivo, setMenuAtivo] = useState(false);
     const [scrolled, setScrolled] = useState(false);
-
     // Efeito para mudar o fundo da nav ao rolar
     useEffect(() => {
         const handleScroll = () => setScrolled(window.scrollY > 50);
         window.addEventListener('scroll', handleScroll);
         return () => window.removeEventListener('scroll', handleScroll);
     }, []);
-
-
-
-
     const scrollToSection = (id) => {
         const section = document.querySelector(id);
         if (section) {
@@ -30,17 +25,14 @@ function Nav() {
 
     return (
         <nav className={`nav-container ${scrolled ? 'scrolled' : ''}`}>
-
-
             <Link to="/" className="logo-link">
                 <img src={Logo} alt="Logo LibertyCar" className="logo" />
             </Link>
-
             {/* Menu Desktop e Mobile */}
             <div className={`navbar ${menuAtivo ? "ativo" : ""}`}>
                 <ul>
                     <li>
-                        <Link to="/" className={currentPath === "/" ? "active" : ""} onClick={() => setMenuAtivo(false)}>
+                        <Link to="/" className={currentPath === "/" ? "active" : ""} onClick={() => { setMenuAtivo(false); window.scrollTo({ top: 0, behavior: "smooth" }); }}>
                             Home
                         </Link>
                     </li>
@@ -53,7 +45,7 @@ function Nav() {
                         Depoimentos
                     </li>
                     <li className="nav-cta-mobile">
-                        <a href="https://wa.me/5514998420710" target='_blank' rel='noopener noreferrer' className="btn-contact">
+                        <a href="https://wa.me/5514998659046" target='_blank' rel='noopener noreferrer' className="btn-contact">
                             Contato
                         </a>
                     </li>
@@ -69,16 +61,11 @@ function Nav() {
 
             {/* Botão de Contato Desktop */}
             <div className="nav-actions">
-                <a href="https://wa.me/5514998420710" target='_blank' rel='noopener noreferrer' className="btn-contact-desktop">
+                <a href="https://wa.me/5514998659046" target='_blank' rel='noopener noreferrer' className="btn-contact-desktop">
                     Falar com Especialista
                 </a>
-
-
             </div>
-
         </nav>
-
     );
 }
-
 export default Nav;
