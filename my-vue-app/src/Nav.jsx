@@ -1,26 +1,49 @@
 import React, { useState, useEffect } from 'react';
-import { Link, useLocation } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { Menu, X, ExternalLink } from 'lucide-react'; // Ícones modernos
 import Logo from './assets/LOGO-VETORIZADA.png';
 import './Nav.css';
 
 function Nav() {
     const location = useLocation();
+    const navigate = useNavigate();
     const currentPath = location.pathname;
     const [menuAtivo, setMenuAtivo] = useState(false);
     const [scrolled, setScrolled] = useState(false);
+
     // Efeito para mudar o fundo da nav ao rolar
     useEffect(() => {
         const handleScroll = () => setScrolled(window.scrollY > 50);
         window.addEventListener('scroll', handleScroll);
         return () => window.removeEventListener('scroll', handleScroll);
     }, []);
+
+    useEffect(() => {
+        if (location.state?.scrollTo) {
+            const id = location.state.scrollTo;
+            setTimeout(() => {
+                const section = document.querySelector(id);
+                if (section) {
+                    const yOffset = -90;
+                    const y = section.getBoundingClientRect().top + window.scrollY + yOffset;
+                    window.scrollTo({ top: y, behavior: "smooth" });
+                }
+            }, 150);
+        }
+    }, [location]);
+
     const scrollToSection = (id) => {
+        setMenuAtivo(false);
+        if (location.pathname !== '/') {
+            navigate('/', { state: { scrollTo: id } });
+            return;
+        }
         const section = document.querySelector(id);
         if (section) {
-            section.scrollIntoView({ behavior: "smooth" });
+            const yOffset = -90;
+            const y = section.getBoundingClientRect().top + window.scrollY + yOffset;
+            window.scrollTo({ top: y, behavior: "smooth" });
         }
-        setMenuAtivo(false);
     };
 
     return (
@@ -41,7 +64,7 @@ function Nav() {
                             Limpa Nome
                         </a>
                     </li>
-                    <li className={currentPath === "/depoimentos" ? "active" : ""} onClick={() => scrollToSection(".video-container")}>
+                    <li className={currentPath === "/depoimentos" ? "active" : ""} onClick={() => scrollToSection(".testimonials-section")}>
                         Depoimentos
                     </li>
                     <li className="nav-cta-mobile">

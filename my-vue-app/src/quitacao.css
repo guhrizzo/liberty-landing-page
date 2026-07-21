@@ -1,12 +1,12 @@
-body {
-    overflow-x: hidden;
+html, body {
+    width: 100%;
+    scroll-behavior: smooth;
 }
 
-body, html {
+.Quit-container {
     overflow-x: hidden;
     width: 100%;
-    position: relative;
-  }
+}
 
 .whatsapp-float {
     position: fixed;

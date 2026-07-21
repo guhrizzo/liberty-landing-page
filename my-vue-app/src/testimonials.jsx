@@ -61,7 +61,7 @@ export default function TestimonialsSection() {
           href="https://wa.me/+5514998659046?"
           target='_blank'
           rel="noopener noreferrer"
-          className='btn-lm'
+          className='btn-lm btn-whatsapp'
         >
           Quero conhecer mais!
         </a>

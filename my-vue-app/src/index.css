@@ -2,6 +2,10 @@
 
 @import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css");
 
+html, body {
+  scroll-behavior: smooth;
+}
+
 * {
   padding: 0;
   margin: 0;
@@ -12,4 +16,18 @@
 a {
   text-decoration: none;
   color: inherit;
+}
+
+/* Classe para botões de texto que levam ao WhatsApp */
+.btn-whatsapp {
+  background: #25D366 !important;
+  color: #fff !important;
+  border: none !important;
+  transition: transform 0.25s ease, box-shadow 0.25s ease !important;
+  cursor: pointer;
+}
+
+.btn-whatsapp:hover {
+  transform: scale(1.05) !important;
+  box-shadow: 0 6px 20px rgba(37, 211, 102, 0.45) !important;
 }

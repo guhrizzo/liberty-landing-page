@@ -54,7 +54,7 @@ export default function Explication() {
         target="_blank"
         rel="noopener noreferrer"
 
-      ><button className="btn-sell">
+      ><button className="btn-sell btn-whatsapp">
           Quero vender meu veiculo agora
         </button>
       </a>

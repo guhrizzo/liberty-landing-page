@@ -9,6 +9,7 @@ import Quitacao from "./quitacao"
 import { link, title } from "motion/react-client"
 import { DarkModeProvider, useDark } from "./DarkModeContext"
 import Footer from "./Footer"
+import HeroCar from "./assets/hero-car.jpg"
 
 function Landing() {
 
@@ -55,31 +56,37 @@ function Landing() {
             <div className="blur-glow fade-in-up"></div>
             <Nav />
             <div className="apresentacao">
-                <h1 className="fade-in-up" style={{ animationDelay: "0s" }}>
-                    Está com o <span>nome sujo</span> ou seu carro está em <span>risco de apreensão?</span>
-                </h1>
+                <div className="hero-left">
+                    <h1 className="fade-in-up" style={{ animationDelay: "0s" }}>
+                        Está com o <span>nome sujo</span> ou seu carro está em <span>risco de apreensão?</span>
+                    </h1>
 
-                <h2 className="fade-in-up" style={{ animationDelay: "0.3s" }}>
-                    A <span>Liberty Car</span> resolve com soluções jurídicas confiáveis<span className="dot">, </span>
-                    <span>sem enrolações</span> e <span>com clareza total</span>.
-                </h2>
+                    <h2 className="fade-in-up" style={{ animationDelay: "0.3s" }}>
+                        A <span>Liberty Car</span> resolve com soluções jurídicas confiáveis<span className="dot">, </span>
+                        <span>sem enrolações</span> e <span>com clareza total</span>.
+                    </h2>
 
-                {mounted && (
-                    <div className="card-container">
-                        {cards.map((card, index) => (
-                            <Card
-                                key={index}
-                                title={card.title}
-                                description={card.description}
-                                icon={card.icon}
-                                link={card.link}
-                                delay={`${index * 0.4}s`}
-                                isDark={isDark}
-                                highlight={index === 0}
-                            />
-                        ))}
-                    </div>
-                )}
+                    {mounted && (
+                        <div className="card-container">
+                            {cards.map((card, index) => (
+                                <Card
+                                    key={index}
+                                    title={card.title}
+                                    description={card.description}
+                                    icon={card.icon}
+                                    link={card.link}
+                                    delay={`${index * 0.4}s`}
+                                    isDark={isDark}
+                                    highlight={index === 0}
+                                />
+                            ))}
+                        </div>
+                    )}
+                </div>
+
+                <div className="hero-right fade-in-up" style={{ animationDelay: "0.5s" }}>
+                    <img src={HeroCar} alt="Carro premium Liberty Car" className="hero-car-img" />
+                </div>
             </div>
 
 

@@ -67,7 +67,7 @@ export default function Carousel() {
           rel="noopener noreferrer"
 
         >
-          <button className="btn-msg">
+          <button className="btn-msg btn-whatsapp">
             Falar com especialista
             <MessageCircle size={20} strokeWidth={2.5} />
           </button>

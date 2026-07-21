@@ -10,6 +10,15 @@
   <link rel="manifest" href="src/ico/site.webmanifest">
   <link rel="shortcut icon" href="src/ico/favicon.ico" type="image/x-icon">
   <title>Liberty Car</title>
+
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=AW-18340625424"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'AW-18340625424');
+  </script>
 </head>
 
 <body>
@@ -19,6 +28,22 @@
     document.documentElement.classList.add(theme);
   </script>
   <script type="module" src="/src/main.jsx"></script>
+  <!-- Conversão: clique no botão do WhatsApp -->
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      var whatsappLinks = document.querySelectorAll('a[href*="wa.me"], a[href*="api.whatsapp.com"]');
+
+      whatsappLinks.forEach(function(link) {
+        link.addEventListener('click', function() {
+          gtag('event', 'conversion', {
+            'send_to': 'AW-18340625424/XvGvCM3Up9QcEJD4vqlE',
+            'value': 1.0,
+            'currency': 'BRL'
+          });
+        });
+      });
+    });
+  </script>
 </body>
 
 </html>
