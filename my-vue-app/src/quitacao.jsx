@@ -22,7 +22,7 @@ function Quitacao() {
     return (
         <div className='Quit-container'>
             <a
-                href="https://wa.me/+5514998659046?"
+                href={`https://wa.me/+5514998659046?text=${encodeURIComponent("Vim pelo site e queria tirar algumas dúvidas com vocês! 😊")}`}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="whatsapp-float"
@@ -42,7 +42,7 @@ function Quitacao() {
             <BrokenCar />
             <Carousel />
             <a
-                href="https://wa.me/5514998420710?text=Ol%C3%A1%2C%20tenho%20interesse%20em%20vender%20meu%20ve%C3%ADculo"
+                href={`https://wa.me/5514998420710?text=${encodeURIComponent("Vim pelo site e tenho interesse em vender meu veículo com dívida! Podem me ajudar? 😊")}`}
                 target="_blank"
                 rel="noopener noreferrer"
 

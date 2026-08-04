@@ -58,7 +58,7 @@ export default function TestimonialsSection() {
       </div>
       <div className='button-div'>
         <a
-          href="https://wa.me/+5514998659046?"
+          href={`https://wa.me/+5514998659046?text=${encodeURIComponent("Vim pelo site e vi os depoimentos! Quero conhecer melhor como vocês podem me ajudar! 😊")}`}
           target='_blank'
           rel="noopener noreferrer"
           className='btn-lm btn-whatsapp'

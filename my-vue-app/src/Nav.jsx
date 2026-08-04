@@ -68,7 +68,7 @@ function Nav() {
                         Depoimentos
                     </li>
                     <li className="nav-cta-mobile">
-                        <a href="https://wa.me/5514998659046" target='_blank' rel='noopener noreferrer' className="btn-contact">
+                        <a href={`https://wa.me/5514998659046?text=${encodeURIComponent("Vim pelo site e gostaria de falar com um especialista! 😊")}`} target='_blank' rel='noopener noreferrer' className="btn-contact">
                             Contato
                         </a>
                     </li>
@@ -84,7 +84,7 @@ function Nav() {
 
             {/* Botão de Contato Desktop */}
             <div className="nav-actions">
-                <a href="https://wa.me/5514998659046" target='_blank' rel='noopener noreferrer' className="btn-contact-desktop">
+                <a href={`https://wa.me/5514998659046?text=${encodeURIComponent("Vim pelo site e gostaria de falar com um especialista! 😊")}`} target='_blank' rel='noopener noreferrer' className="btn-contact-desktop">
                     Falar com Especialista
                 </a>
             </div>

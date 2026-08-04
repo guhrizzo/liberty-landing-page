@@ -45,7 +45,7 @@ function Landing() {
     return (
         <div className="landing-container">
             <a
-                href="https://wa.me/5514998420710?text=Ol%C3%A1%2C%20tenho%20interesse%20em%20vender%20meu%20ve%C3%ADculo"
+                href={`https://wa.me/5514998420710?text=${encodeURIComponent("Vim pelo site e gostaria de saber mais sobre os serviços da Liberty Car! 😊")}`}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="whatsapp-float"

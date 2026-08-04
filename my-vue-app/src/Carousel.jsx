@@ -62,7 +62,7 @@ export default function Carousel() {
 
         </Swiper>
         <a
-          href="https://wa.me/+5514998659046?"
+          href={`https://wa.me/+5514998659046?text=${encodeURIComponent("Vim pelo site e preciso de ajuda com uma situação complicada! Podem me orientar? 😊")}`}
           target="_blank"
           rel="noopener noreferrer"
 
