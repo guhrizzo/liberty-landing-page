@@ -50,7 +50,7 @@ export default function Explication() {
         ))}
       </div>
       <a
-        href={`https://wa.me/+5514998659046?text=${encodeURIComponent("Vim pelo site e quero vender meu veículo com dívida! Como funciona? 😊")}`}
+        href={`https://wa.me/+5514998659046?text=${encodeURIComponent("Vim pelo site, gostaria de vender meu veículo financiado, pode me orientar ?")}`}
         target="_blank"
         rel="noopener noreferrer"
 

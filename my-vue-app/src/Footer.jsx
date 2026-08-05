@@ -20,7 +20,7 @@ function Footer() {
                         <a href="https://www.instagram.com/liberty_car7/" target='_blank' rel='noreferrer' aria-label="Instagram">
                             <Instagram size={20} />
                         </a>
-                        <a href={`https://wa.me/5514998420710?text=${encodeURIComponent("Vim pelo site e gostaria de mais informações sobre a Liberty Car! 😊")}`} target='_blank' rel='noreferrer' aria-label="WhatsApp">
+                        <a href={`https://wa.me/5514998420710?text=${encodeURIComponent("Vim pelo site, gostaria de vender meu veículo financiado, pode me orientar ?")}`} target='_blank' rel='noreferrer' aria-label="WhatsApp">
                             <MessageCircle size={20} />
                         </a>
                     </div>
