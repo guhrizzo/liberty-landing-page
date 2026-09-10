@@ -16,8 +16,8 @@ export default function Explication() {
     },
     {
       icon: <UserCheck size={32} />,
-      title: "Investidor Confiável",
-      text: "Um parceiro assume a quitação em até 24 meses. Você não desembolsa nada."
+      title: "Quitação do veículo",
+      text: "A Liberty Car, ou um investidor parceiro realiza a quitação em 24 meses. Você não desembolsa nada."
     },
     {
       icon: <ShieldCheck size={32} />,

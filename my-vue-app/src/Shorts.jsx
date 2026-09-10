@@ -9,6 +9,7 @@ import './Shorts.css';
 
 const Shorts = () => {
   const videoUrls = [
+    "https://www.youtube.com/embed/uCV33gPeBrs",
     "https://www.youtube.com/embed/l52Ymt8PiA8",
     "https://www.youtube.com/embed/t8oDojIIO2A",
     "https://www.youtube.com/embed/e1iWuSdreh4",

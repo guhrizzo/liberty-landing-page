@@ -34,17 +34,22 @@
 }
 
 .title-car {
-    font-size: 48px;
+    font-size: 60px;
     color: #ffffff;
-    line-height: 1.1;
+    line-height: 1.15;
     font-weight: 800;
     text-align: left;
     margin-bottom: 20px;
 }
 
 .text-car-effect {
-    color: #008bf8;
-    display: block; /* Garante que o destaque fique em nova linha se necessário */
+    display: inline-block; /* Faz o preenchimento envolver apenas o texto */
+    margin-top: 10px;
+    padding: 4px 16px;
+    background-color: #008bf8;
+    color: #ffffff;
+    border-radius: 10px;
+    text-decoration: none;
 }
 
 .text-info {

@@ -6,7 +6,7 @@ import "./Testimonials.css";
 import { UserRoundCheck } from "lucide-react";
 
 const testimonials = [
-  { name: "João Martins", text: "Tive meu carro levado e já não acreditava mais em recuperá-lo. A Liberty Car foi extremamente rápida e eficiente: em menos de 48 horas o veículo estava de volta comigo.", rating: 5 },
+  { name: "Rafael Nogueira", text: "Precisava vender meu carro financiado e não sabia por onde começar. A Liberty Car cuidou de tudo com rapidez e transparência: em poucos dias fechei negócio sem dor de cabeça.", rating: 5 },
   { name: "Ana Paula Ferreira", text: "Fiquei impressionada com a agilidade e atenção de toda a equipe. Fui informada de cada passo, sempre com clareza e profissionalismo.", rating: 5 },
   { name: "Carlos Henrique", text: "A Liberty Car foi a solução no momento mais difícil. Profissionais qualificados, atendimento humano e ágil. Recuperaram meu veículo e me deram tranquilidade.", rating: 5 },
   { name: "Mariana Souza", text: "Além de recuperarem meu carro com eficiência, a equipe demonstrou empatia e transparência em todo o processo. Me senti segura e bem acolhida.", rating: 5 },
