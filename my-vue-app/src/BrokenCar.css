@@ -6,40 +6,70 @@
 }
 
 .img-car-hero {
+    background-color: #05080f; /* Evita flash branco antes do vídeo carregar */
     background-image: url('assets/PictureCarSnokeBlack.png');
     background-size: cover;
     background-position: center;
-    background-attachment: fixed;
     position: relative;
     width: 100%;
     height: 100vh;
     display: flex;
     align-items: center; /* Centraliza verticalmente o conteúdo */
     padding: 0 5%;
+    overflow: hidden;
+    isolation: isolate; /* Contexto de empilhamento estável (evita repaint do fade no scroll) */
 }
 
-/* Overlay mais suave mas eficiente */
+/* Vídeo de fundo do hero */
+.hero-video {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: 0;
+    pointer-events: none;
+}
+
+/* Overlay único (fade + vinheta) numa só camada, para não piscar no scroll */
 .img-car-hero::before {
     content: "";
     position: absolute;
     inset: 0;
-    background: linear-gradient(to right, rgba(0,0,0,0.8) 0%, rgba(0,0,0,0.3) 100%);
     z-index: 1;
+    pointer-events: none;
+    background:
+        radial-gradient(ellipse at 32% 45%,
+            rgba(0, 0, 0, 0) 35%,
+            rgba(0, 0, 0, 0.45) 100%),
+        linear-gradient(to right,
+            rgba(5, 8, 15, 0.92) 0%,
+            rgba(5, 8, 15, 0.55) 45%,
+            rgba(5, 8, 15, 0.20) 100%),
+        linear-gradient(to bottom,
+            rgba(5, 8, 15, 0.80) 0%,
+            rgba(5, 8, 15, 0.00) 22%,
+            rgba(5, 8, 15, 0.00) 58%,
+            rgba(5, 8, 15, 0.95) 100%);
 }
 
 .content-wrapper {
     position: relative;
     z-index: 2;
     max-width: 800px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 32px; /* Espaça título, texto e botão */
 }
 
 .title-car {
-    font-size: 60px;
+    font-size: 66px;
     color: #ffffff;
     line-height: 1.15;
     font-weight: 800;
     text-align: left;
-    margin-bottom: 20px;
+    margin-bottom: 0;
 }
 
 .text-car-effect {
@@ -53,9 +83,9 @@
 }
 
 .text-info {
-    font-size: 20px;
+    font-size: 23px;
     color: #e0e0e0;
-    margin-bottom: 30px;
+    margin-bottom: 0;
     line-height: 1.6;
 }
 
@@ -86,24 +116,40 @@
 @media (max-width: 768px) {
     .img-car-hero {
         height: 101dvh;
-        background-attachment: local; /* Fixed causa lag no mobile */
         background-image: url('assets/PictureCar.png');
-        align-items: flex-end; /* Conteúdo vai para baixo no mobile */
-        padding-bottom: 60px;
+        align-items: center; /* Conteúdo mais centralizado no mobile */
+        padding-top: 90px;   /* Compensa a navbar */
+        padding-bottom: 40px;
     }
 
+    /* No mobile: escurecimento mais uniforme, um pouco mais forte na base */
     .img-car-hero::before {
-        background: rgba(0, 0, 0, 0.6);
+        background: linear-gradient(to bottom,
+            rgba(5, 8, 15, 0.55) 0%,
+            rgba(5, 8, 15, 0.45) 40%,
+            rgba(5, 8, 15, 0.70) 100%);
+    }
+
+    .content-wrapper {
+        gap: 40px; /* Infos mais espalhadas no mobile */
     }
 
     .title-car {
-        font-size: 28px;
+        font-size: 30px;
         margin-left: 0;
     }
 
+    .text-car-effect {
+        padding: 4px 12px;
+    }
+
     .text-info {
-        font-size: 18px;
+        font-size: 19px;
         margin-left: 0;
+    }
+
+    .text-info br {
+        display: none; /* Deixa o texto quebrar naturalmente no mobile */
     }
 
     .btn-broken {

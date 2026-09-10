@@ -11,6 +11,15 @@ function BrokenCar() {
     return (
         <section className='broken-car-section'>
             <div className="img-car-hero">
+                <video
+                    className="hero-video"
+                    src="/hero-video.mp4"
+                    autoPlay
+                    muted
+                    loop
+                    playsInline
+                    preload="auto"
+                />
                 <div className="content-wrapper">
                     <h1 className='title-car'>
                         Ainda está tentando <br /> 
