@@ -8,9 +8,9 @@ import { UserRoundCheck } from "lucide-react";
 const testimonials = [
   { name: "Rafael Nogueira", text: "Precisava vender meu carro financiado e não sabia por onde começar. A Liberty Car cuidou de tudo com rapidez e transparência: em poucos dias fechei negócio sem dor de cabeça.", rating: 5 },
   { name: "Ana Paula Ferreira", text: "Fiquei impressionada com a agilidade e atenção de toda a equipe. Fui informada de cada passo, sempre com clareza e profissionalismo.", rating: 5 },
-  { name: "Carlos Henrique", text: "A Liberty Car foi a solução no momento mais difícil. Profissionais qualificados, atendimento humano e ágil. Recuperaram meu veículo e me deram tranquilidade.", rating: 5 },
-  { name: "Mariana Souza", text: "Além de recuperarem meu carro com eficiência, a equipe demonstrou empatia e transparência em todo o processo. Me senti segura e bem acolhida.", rating: 5 },
-  { name: "Ricardo Almeida", text: "Excelente serviço! A equipe foi rápida, objetiva e muito competente. Meu carro foi devolvido em perfeitas condições e sem burocracias.", rating: 5 },
+  { name: "Carlos Henrique", text: "Eu estava atrasado nas parcelas e sem saber o que fazer. A Liberty Car resolveu tudo e consegui sair da dívida. Atendimento humano e sem enrolação.", rating: 5 },
+  { name: "Mariana Souza", text: "Fiquei com receio no começo, mas a equipe foi transparente do início ao fim. Eles quitaram meu carro antes do prazo e resolveram toda a burocracia por mim. Me senti segura em todo o processo.", rating: 5 },
+  { name: "Ricardo Almeida", text: "Excelente serviço! Pagaram um valor justo pelo meu carro, foi tudo rápido e sem burocracia. Consegui sair da dívida e respirar aliviado.", rating: 5 },
   { name: "Fernanda Lima", text: "A Liberty Car transformou uma situação de desespero em alívio. O atendimento foi ágil e extremamente profissional. Experiência excelente!", rating: 5 },
 ];
 
@@ -22,7 +22,7 @@ export default function TestimonialsSection() {
       <div className="testimonials-header">
         <span className="faq-badge"><UserRoundCheck size={16}/> Depoimentos</span>
         <h2>O que nossos clientes dizem</h2>
-        <p>A confiança de quem já recuperou sua tranquilidade com a Liberty Car.</p>
+        <p>A confiança de quem já saiu da dívida com a Liberty Car.</p>
       </div>
 
       <div className="testimonials-grid">

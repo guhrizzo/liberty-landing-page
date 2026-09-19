@@ -9,12 +9,12 @@ import './Shorts.css';
 
 const Shorts = () => {
   const videoUrls = [
-    "https://www.youtube.com/embed/uCV33gPeBrs",
     "https://www.youtube.com/embed/l52Ymt8PiA8",
+    "https://www.youtube.com/embed/LZ3BiSls_Oo",
+    "https://www.youtube.com/embed/X94GXeI4euw",
+    "https://www.youtube.com/embed/uCV33gPeBrs",
     "https://www.youtube.com/embed/t8oDojIIO2A",
     "https://www.youtube.com/embed/e1iWuSdreh4",
-    "https://www.youtube.com/embed/X94GXeI4euw",
-    "https://www.youtube.com/embed/LZ3BiSls_Oo"
   ];
 
   // Estado para controlar quais vídeos já foram "desbloqueados" pelo clique
