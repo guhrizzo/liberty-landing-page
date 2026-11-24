@@ -4,6 +4,7 @@ import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import Landing from './Landing';
 import LimpaNome from './limpa-nome';
 import Quitacao from './quitacao';
+import Aguarde from './Aguarde';
 import { DarkModeProvider } from './DarkModeContext';
 
 
@@ -15,6 +16,7 @@ function App() {
       <BrowserRouter>
         <Routes>
           <Route path='/limpa-nome' element={<LimpaNome />} />
+          <Route path='/aguarde' element={<Aguarde />} />
           <Route path='/' element={<Quitacao />} />
           <Route path='*' element={''} />
         </Routes>

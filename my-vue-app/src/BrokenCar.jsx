@@ -1,13 +1,7 @@
 import './BrokenCar.css';
+import { scrollToSection } from './smoothScroll';
 
 function BrokenCar() {
-    const handleScroll = () => {
-        const section = document.querySelector(".carousel-section-container");
-        if (section) {
-            section.scrollIntoView({ behavior: "smooth" });
-        }
-    };
-
     return (
         <section className='broken-car-section'>
             <div className="img-car-hero">
@@ -32,7 +26,7 @@ function BrokenCar() {
                         segurar um carro que <span className='text-car-highlight'>já está te afundando:</span>
                     </p>
 
-                    <button className='btn-broken' onClick={handleScroll}>
+                    <button className='btn-broken' onClick={() => scrollToSection(".carousel-section-container")}>
                         Saiba mais
                     </button>
                 </div>

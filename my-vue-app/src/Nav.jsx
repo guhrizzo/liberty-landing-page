@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { Menu, X, ExternalLink } from 'lucide-react'; // Ícones modernos
 import Logo from './assets/LOGO-VETORIZADA.png';
+import { scrollToSection } from './smoothScroll';
 import './Nav.css';
 
 function Nav() {
@@ -21,29 +22,18 @@ function Nav() {
     useEffect(() => {
         if (location.state?.scrollTo) {
             const id = location.state.scrollTo;
-            setTimeout(() => {
-                const section = document.querySelector(id);
-                if (section) {
-                    const yOffset = -90;
-                    const y = section.getBoundingClientRect().top + window.scrollY + yOffset;
-                    window.scrollTo({ top: y, behavior: "smooth" });
-                }
-            }, 150);
+            const frame = requestAnimationFrame(() => scrollToSection(id, 90));
+            return () => cancelAnimationFrame(frame);
         }
     }, [location]);
 
-    const scrollToSection = (id) => {
+    const handleSectionClick = (id) => {
         setMenuAtivo(false);
         if (location.pathname !== '/') {
             navigate('/', { state: { scrollTo: id } });
             return;
         }
-        const section = document.querySelector(id);
-        if (section) {
-            const yOffset = -90;
-            const y = section.getBoundingClientRect().top + window.scrollY + yOffset;
-            window.scrollTo({ top: y, behavior: "smooth" });
-        }
+        scrollToSection(id, 90);
     };
 
     return (
@@ -55,16 +45,16 @@ function Nav() {
             <div className={`navbar ${menuAtivo ? "ativo" : ""}`}>
                 <ul>
                     <li>
-                        <Link to="/" className={currentPath === "/" ? "active" : ""} onClick={() => { setMenuAtivo(false); window.scrollTo({ top: 0, behavior: "smooth" }); }}>
+                        <Link to="/" className={currentPath === "/" ? "active" : ""} onClick={() => { setMenuAtivo(false); scrollToSection(); }}>
                             Home
                         </Link>
                     </li>
                     <li>
-                        <a href="https://libertycred.net.br" target="_blank" rel="noopener noreferrer">
-                            Limpa Nome
-                        </a>
+                        <Link to="/aguarde" aria-current={currentPath === "/aguarde" ? "page" : undefined} onClick={() => setMenuAtivo(false)}>
+                            Quitação
+                        </Link>
                     </li>
-                    <li className={currentPath === "/depoimentos" ? "active" : ""} onClick={() => scrollToSection(".testimonials-section")}>
+                    <li className={currentPath === "/depoimentos" ? "active" : ""} onClick={() => handleSectionClick(".testimonials-section")}>
                         Depoimentos
                     </li>
                     <li className="nav-cta-mobile">
